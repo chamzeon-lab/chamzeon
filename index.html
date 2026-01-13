@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>청담 노블 24시 동물의료센터</title>
-    <meta name="description" content="24시간 깨어있는 반려동물 건강 지킴이, 청담 노블 동물의료센터입니다." />
+    <title>참좋은동물병원</title>
+    <meta name="description" content="중성화수술 전문, 반려동물 건강 지킴이 참좋은동물병원입니다." />
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -34,7 +34,6 @@
             animation: {
               'fade-in-up': 'fadeInUp 1s ease-out forwards',
               'shine': 'shine 1.5s infinite',
-              'bounce-slow': 'bounce 3s infinite',
             },
             keyframes: {
               fadeInUp: {
@@ -65,9 +64,8 @@
 {
   "imports": {
     "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
     "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
     "framer-motion": "https://esm.sh/framer-motion@^12.25.0",
     "vite": "https://esm.sh/vite@^7.3.1",
     "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
@@ -86,11 +84,11 @@
           <div class="flex items-center">
             <a href="#" class="flex items-center gap-2 group">
                <div id="logo-circle" class="w-10 h-10 rounded-full flex items-center justify-center border-2 transition-colors border-white text-white">
-                 <span class="font-serif font-bold text-xl">N</span>
+                 <span class="font-serif font-bold text-xl">C</span>
                </div>
                <div class="flex flex-col">
                  <span id="logo-text" class="text-xl font-bold tracking-tight transition-colors text-white">
-                   NOBLE
+                   참좋은
                  </span>
                  <span id="logo-sub" class="text-xs tracking-widest transition-colors text-slate-200">
                    ANIMAL MEDICAL CENTER
@@ -102,15 +100,9 @@
           <!-- Desktop Navigation -->
           <nav class="hidden md:flex items-center space-x-8">
             <a href="#about" class="nav-link text-sm font-medium hover:text-amber-500 transition-colors text-white/90">병원소개</a>
-            <a href="#services" class="nav-link text-sm font-medium hover:text-amber-500 transition-colors text-white/90">진료안내</a>
             <a href="#stats" class="nav-link text-sm font-medium hover:text-amber-500 transition-colors text-white/90">수술센터</a>
             <a href="#team" class="nav-link text-sm font-medium hover:text-amber-500 transition-colors text-white/90">의료진</a>
             <a href="#contact" class="nav-link text-sm font-medium hover:text-amber-500 transition-colors text-white/90">오시는길</a>
-            
-            <a href="tel:02-1234-5678" id="header-cta" class="flex items-center gap-2 px-4 py-2 rounded-full border transition-all border-white text-white hover:bg-white hover:text-primary">
-              <i data-lucide="phone" class="w-4 h-4"></i>
-              <span class="text-sm font-bold">24시 응급콜</span>
-            </a>
           </nav>
 
           <!-- Mobile Menu Button -->
@@ -124,16 +116,9 @@
       <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-lg md:hidden border-t">
           <div class="flex flex-col py-4">
             <a href="#about" class="mobile-link px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">병원소개</a>
-            <a href="#services" class="mobile-link px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">진료안내</a>
             <a href="#stats" class="mobile-link px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">수술센터</a>
             <a href="#team" class="mobile-link px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">의료진</a>
             <a href="#contact" class="mobile-link px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">오시는길</a>
-            <div class="px-6 py-3">
-              <a href="tel:02-1234-5678" class="flex justify-center items-center gap-2 w-full bg-primary text-white py-3 rounded-md">
-                <i data-lucide="phone" class="w-4 h-4"></i>
-                24시 응급 상담전화
-              </a>
-            </div>
           </div>
       </div>
     </header>
@@ -156,7 +141,7 @@
       <a href="#" class="hidden md:flex flex-col items-center justify-center w-16 h-16 bg-[#FF0000] hover:bg-[#D30000] text-white rounded-xl shadow-lg transition-transform hover:scale-110 group relative">
         <i data-lucide="monitor-play" class="w-6 h-6 mb-0.5"></i>
         <span class="text-[10px] font-bold">TV</span>
-        <span class="absolute right-full mr-3 bg-slate-800 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">노블 TV</span>
+        <span class="absolute right-full mr-3 bg-slate-800 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">참좋은 TV</span>
       </a>
       <!-- Map -->
       <a href="#contact" class="hidden md:flex flex-col items-center justify-center w-16 h-16 bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 rounded-xl shadow-lg transition-transform hover:scale-110 group relative">
@@ -165,7 +150,7 @@
         <span class="absolute right-full mr-3 bg-slate-800 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">오시는 길</span>
       </a>
       <!-- Mobile Call (Additional) -->
-      <a href="tel:02-1234-5678" class="md:hidden flex flex-col items-center justify-center w-14 h-14 bg-amber-600 hover:bg-amber-700 text-white rounded-full shadow-lg transition-transform hover:scale-110">
+      <a href="tel:055-351-3581" class="md:hidden flex flex-col items-center justify-center w-14 h-14 bg-amber-600 hover:bg-amber-700 text-white rounded-full shadow-lg transition-transform hover:scale-110">
         <i data-lucide="phone" class="w-6 h-6"></i>
       </a>
       <!-- Top -->
@@ -201,31 +186,28 @@
                             진료 예약하기
                             <i data-lucide="arrow-right" class="group-hover:translate-x-1 transition-transform"></i>
                         </a>
-                        <a href="#services" class="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-sm text-lg font-medium hover:bg-white/20 transition-all">
-                            진료 과목 보기
-                        </a>
                     </div>
                     <div class="mt-16 grid grid-cols-3 gap-8 border-t border-white/10 pt-8 animate-fade-in-up" style="animation-delay: 0.4s;">
                         <div class="text-center sm:text-left">
                             <div class="flex items-center gap-2 mb-1 justify-center sm:justify-start">
-                                <i data-lucide="activity" class="text-amber-500 w-5 h-5"></i>
-                                <span class="font-bold text-lg">24h</span>
+                                <i data-lucide="scissors" class="text-amber-500 w-5 h-5"></i>
+                                <span class="font-bold text-lg">Gonadectomy</span>
                             </div>
-                            <p class="text-sm text-slate-400">365일 응급진료</p>
+                            <p class="text-sm text-slate-400">중성화수술</p>
                         </div>
                         <div class="text-center sm:text-left">
                             <div class="flex items-center gap-2 mb-1 justify-center sm:justify-start">
                                 <i data-lucide="shield-check" class="text-amber-500 w-5 h-5"></i>
                                 <span class="font-bold text-lg">Specialist</span>
                             </div>
-                            <p class="text-sm text-slate-400">분과별 전문의</p>
+                            <p class="text-sm text-slate-400">중성화수술전문병원</p>
                         </div>
                         <div class="text-center sm:text-left">
                             <div class="flex items-center gap-2 mb-1 justify-center sm:justify-start">
                                 <i data-lucide="heart" class="text-amber-500 w-5 h-5"></i>
                                 <span class="font-bold text-lg">Care</span>
                             </div>
-                            <p class="text-sm text-slate-400">환자 중심 케어</p>
+                            <p class="text-sm text-slate-400">1:1 맞춤 케어</p>
                         </div>
                     </div>
                 </div>
@@ -248,7 +230,7 @@
                         <span class="text-amber-600 font-bold tracking-widest text-sm uppercase mb-2 block">Why Choose Us</span>
                         <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 leading-tight">
                             반려동물의 평생 주치의, <br />
-                            <span class="text-amber-600">노블 동물의료센터</span>입니다.
+                            <span class="text-amber-600">참좋은동물병원</span>입니다.
                         </h2>
                         <p class="text-slate-600 mb-8 leading-relaxed">
                             단순한 치료를 넘어, 반려동물과 보호자의 마음까지 치유합니다. 최고의 시설에서 이뤄지는 전문적인 의료 서비스와 따뜻한 케어를 경험해보세요.
@@ -256,7 +238,7 @@
                         <ul class="space-y-4">
                             <li class="flex items-center gap-3">
                                 <i data-lucide="check-circle-2" class="text-amber-600 w-5 h-5 flex-shrink-0"></i>
-                                <span class="text-slate-800 font-medium">24시간 수의사 상주 응급 시스템</span>
+                                <span class="text-slate-800 font-medium">안전한 중성화 수술 시스템</span>
                             </li>
                             <li class="flex items-center gap-3">
                                 <i data-lucide="check-circle-2" class="text-amber-600 w-5 h-5 flex-shrink-0"></i>
@@ -289,12 +271,13 @@
             </div>
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="text-center mb-20">
-                    <span class="text-amber-500 font-bold tracking-widest text-sm uppercase mb-3 block">Noble Medical Record</span>
+                    <span class="text-amber-500 font-bold tracking-widest text-sm uppercase mb-3 block">Chamjoeun Medical Record</span>
                     <h2 class="text-3xl md:text-5xl font-serif font-bold text-white mb-6 leading-tight">
-                        숫자로 증명하는 <span class="text-amber-400 italic">탁월함</span>
+                        숫자로 증명하는 <span class="text-amber-400 italic">전문성</span>
                     </h2>
                     <p class="text-slate-400 max-w-2xl mx-auto text-lg">
-                        수만 건의 임상 경험을 바탕으로 반려동물에게 가장 안전하고 정확한 치료를 약속합니다.
+                        누적 중성화 수술 기록을 투명하게 공개하며, 풍부한 임상 경험을 바탕으로 <br class="hidden md:block" />
+                        반려동물에게 안전하고 정확한 수술을 약속합니다.
                     </p>
                 </div>
 
@@ -305,98 +288,16 @@
                          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent opacity-50"></div>
                          <h3 class="text-amber-400 font-bold tracking-widest uppercase mb-4 text-sm md:text-base">Total Surgery Cases</h3>
                          <div class="text-6xl md:text-8xl font-serif font-bold text-white mb-6 tracking-tight flex justify-center items-start gap-2">
-                             <span class="counter-value" data-target="25483">0</span>
+                             <span class="counter-value" data-target="30">0</span>
                              <span class="text-amber-500 text-4xl md:text-6xl mt-2">+</span>
                          </div>
                          <p class="text-slate-300 text-lg md:text-xl font-light">
                              안전한 마취와 정확한 수술로 쌓아온 <br class="md:hidden"/> <strong class="text-white font-medium">누적 수술 건수</strong>
                          </p>
+                         <p class="text-slate-400 text-sm mt-4 font-medium">
+                            2026년 1월 1일 ~ <span id="current-date"></span> 기준 데이터
+                         </p>
                          <div class="absolute top-0 -left-[100%] w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-12 group-hover:animate-shine transition-all"></div>
-                    </div>
-                </div>
-
-                <!-- Grid Stats -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="stat-card opacity-0 translate-y-8 transition-all duration-700 delay-100 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl text-center hover:bg-slate-800 group">
-                        <div class="mb-4 font-serif text-4xl md:text-5xl font-bold text-amber-100 group-hover:text-amber-400 transition-colors">
-                            <span class="counter-value" data-target="8900">0</span><span class="text-lg md:text-2xl ml-1 align-top">+</span>
-                        </div>
-                        <div class="h-px w-8 bg-slate-600 mx-auto mb-4 group-hover:w-16 group-hover:bg-amber-500 transition-all duration-300"></div>
-                        <h3 class="text-base font-medium text-slate-400 group-hover:text-white transition-colors">재활 치료 케이스</h3>
-                    </div>
-                    <div class="stat-card opacity-0 translate-y-8 transition-all duration-700 delay-300 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl text-center hover:bg-slate-800 group">
-                        <div class="mb-4 font-serif text-4xl md:text-5xl font-bold text-amber-100 group-hover:text-amber-400 transition-colors">
-                            <span class="counter-value" data-target="99">0</span><span class="text-lg md:text-2xl ml-1 align-top">%</span>
-                        </div>
-                        <div class="h-px w-8 bg-slate-600 mx-auto mb-4 group-hover:w-16 group-hover:bg-amber-500 transition-all duration-300"></div>
-                        <h3 class="text-base font-medium text-slate-400 group-hover:text-white transition-colors">고난이도 수술 성공률</h3>
-                    </div>
-                    <div class="stat-card opacity-0 translate-y-8 transition-all duration-700 delay-500 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl text-center hover:bg-slate-800 group">
-                        <div class="mb-4 font-serif text-4xl md:text-5xl font-bold text-amber-100 group-hover:text-amber-400 transition-colors">
-                            <span class="counter-value" data-target="45">0</span><span class="text-lg md:text-2xl ml-1 align-top">종</span>
-                        </div>
-                        <div class="h-px w-8 bg-slate-600 mx-auto mb-4 group-hover:w-16 group-hover:bg-amber-500 transition-all duration-300"></div>
-                        <h3 class="text-base font-medium text-slate-400 group-hover:text-white transition-colors">보유 첨단 의료장비</h3>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section id="services" class="py-24 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-slate-900 mb-4">전문 진료 과목</h2>
-                    <p class="text-slate-600 max-w-2xl mx-auto">각 분야 최고의 전문 의료진이 협진 시스템을 통해 정확하게 진단하고 치료합니다.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Service Item 1 -->
-                    <div class="group p-8 border border-slate-100 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                        <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-amber-600 mb-6 group-hover:bg-amber-500 group-hover:text-white transition-colors">
-                            <i data-lucide="siren" class="w-8 h-8"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-amber-600 transition-colors">24시 응급센터</h3>
-                        <p class="text-slate-600 leading-relaxed">365일 24시간 언제나 열려있는 응급의료 시스템. 골든타임을 지킵니다.</p>
-                    </div>
-                    <!-- Service Item 2 -->
-                    <div class="group p-8 border border-slate-100 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                        <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-amber-600 mb-6 group-hover:bg-amber-500 group-hover:text-white transition-colors">
-                            <i data-lucide="bone" class="w-8 h-8"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-amber-600 transition-colors">외과 수술센터</h3>
-                        <p class="text-slate-600 leading-relaxed">정형외과, 신경외과, 일반외과 등 분과별 전문의의 정밀한 수술 집도.</p>
-                    </div>
-                    <!-- Service Item 3 -->
-                    <div class="group p-8 border border-slate-100 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                        <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-amber-600 mb-6 group-hover:bg-amber-500 group-hover:text-white transition-colors">
-                            <i data-lucide="stethoscope" class="w-8 h-8"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-amber-600 transition-colors">내과 심화진료</h3>
-                        <p class="text-slate-600 leading-relaxed">심장내과, 신장내과, 내분비내과 등 만성질환 및 노령동물 전문 케어.</p>
-                    </div>
-                    <!-- Service Item 4 -->
-                    <div class="group p-8 border border-slate-100 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                        <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-amber-600 mb-6 group-hover:bg-amber-500 group-hover:text-white transition-colors">
-                            <i data-lucide="scan-eye" class="w-8 h-8"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-amber-600 transition-colors">영상 의학센터</h3>
-                        <p class="text-slate-600 leading-relaxed">CT, MRI, 초음파 등 최상급 영상 장비를 통한 정확한 진단.</p>
-                    </div>
-                    <!-- Service Item 5 -->
-                    <div class="group p-8 border border-slate-100 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                        <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-amber-600 mb-6 group-hover:bg-amber-500 group-hover:text-white transition-colors">
-                            <i data-lucide="microscope" class="w-8 h-8"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-amber-600 transition-colors">임상 병리센터</h3>
-                        <p class="text-slate-600 leading-relaxed">원내 자체 임상병리실 운영으로 신속하고 정확한 검사 결과 제공.</p>
-                    </div>
-                    <!-- Service Item 6 -->
-                    <div class="group p-8 border border-slate-100 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                        <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-amber-600 mb-6 group-hover:bg-amber-500 group-hover:text-white transition-colors">
-                            <i data-lucide="heart-pulse" class="w-8 h-8"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-amber-600 transition-colors">심장 전문센터</h3>
-                        <p class="text-slate-600 leading-relaxed">심장 초음파 및 심전도 모니터링을 통한 전문적인 심장 질환 관리.</p>
                     </div>
                 </div>
             </div>
@@ -412,60 +313,98 @@
                         <span class="font-serif italic text-amber-700">전문 의료진</span>
                     </h2>
                     <p class="text-slate-600 max-w-2xl mx-auto">
-                         각 분야의 대학병원 출신 전문 수의사들이 아이들의 건강을 위해 끊임없이 연구하고 진료합니다.
+                         대학병원 출신 전문 수의사가 아이들의 건강을 위해 끊임없이 연구하고 진료합니다.
                     </p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                    <!-- Doctor 1 -->
-                    <div class="group relative">
-                        <div class="aspect-[3/4] overflow-hidden rounded-sm bg-slate-100 mb-6 relative">
-                            <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=1000&auto=format&fit=crop" alt="김노블 대표원장" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105 filter grayscale group-hover:grayscale-0" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                                <p class="text-white text-sm font-light">"생명 존중을 최우선 가치로 여기며, <br/>정직하고 정확한 진료를 약속합니다."</p>
+                
+                <!-- Single Doctor Profile -->
+                <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden max-w-5xl mx-auto">
+                    <div class="grid md:grid-cols-5 gap-0">
+                        <!-- Image Section -->
+                        <div class="md:col-span-2 relative h-[500px] md:h-auto bg-slate-100 group">
+                            <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=1000&auto=format&fit=crop" 
+                                 alt="문현철 원장" 
+                                 class="absolute inset-0 w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent md:bg-none"></div>
+                            <div class="absolute bottom-6 left-6 text-white md:hidden">
+                                <p class="text-sm tracking-widest uppercase opacity-80 mb-1">Director</p>
+                                <h3 class="text-2xl font-bold">문 현 철 원장</h3>
                             </div>
                         </div>
-                        <div class="text-center">
-                            <h3 class="text-xl font-bold text-slate-900 mb-1">김노블 대표원장</h3>
-                            <p class="text-amber-700 font-medium text-sm mb-2 uppercase tracking-wider">Chief of Surgery</p>
-                            <div class="w-8 h-px bg-slate-200 mx-auto my-3"></div>
-                            <p class="text-slate-500 text-sm">일반외과 / 정형외과 / 신경외과</p>
-                        </div>
-                    </div>
-                    <!-- Doctor 2 -->
-                    <div class="group relative">
-                        <div class="aspect-[3/4] overflow-hidden rounded-sm bg-slate-100 mb-6 relative">
-                            <img src="https://images.unsplash.com/photo-1622253692010-33318b703199?q=80&w=1000&auto=format&fit=crop" alt="이청담 원장" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105 filter grayscale group-hover:grayscale-0" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                                <p class="text-white text-sm font-light">"생명 존중을 최우선 가치로 여기며, <br/>정직하고 정확한 진료를 약속합니다."</p>
+                        
+                        <!-- Content Section -->
+                        <div class="md:col-span-3 p-8 md:p-12 flex flex-col justify-center bg-white relative">
+                            <!-- Background Decoration -->
+                            <div class="absolute top-0 right-0 p-8 opacity-5">
+                                <i data-lucide="stethoscope" class="w-32 h-32 text-amber-600"></i>
+                            </div>
+
+                            <div class="hidden md:block mb-8 relative z-10">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <span class="h-px w-8 bg-amber-600"></span>
+                                    <span class="text-amber-600 font-bold tracking-widest text-xs uppercase">Representative Director</span>
+                                </div>
+                                <h3 class="text-4xl font-serif font-bold text-slate-900 mb-2">문 현 철 <span class="text-xl text-slate-500 font-sans font-normal ml-2">원장</span></h3>
+                                <p class="text-slate-500 text-sm font-medium">밀양 참좋은동물병원 대표원장</p>
+                            </div>
+
+                            <div class="space-y-8 relative z-10">
+                                <!-- Education -->
+                                <div>
+                                    <h4 class="flex items-center gap-2 text-base font-bold text-slate-900 mb-3 text-amber-700">
+                                        <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+                                        학력
+                                    </h4>
+                                    <ul class="space-y-2 text-slate-600 text-sm">
+                                        <li class="flex gap-4 items-start">
+                                            <span class="font-bold min-w-[50px] text-slate-400">2002</span>
+                                            <span>경상대학교 수의과 졸업</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- Career -->
+                                <div>
+                                    <h4 class="flex items-center gap-2 text-base font-bold text-slate-900 mb-3 text-amber-700">
+                                        <i data-lucide="briefcase" class="w-4 h-4"></i>
+                                        경력
+                                    </h4>
+                                    <ul class="space-y-2 text-slate-600 text-sm">
+                                        <li class="flex gap-4 items-start">
+                                            <span class="font-bold min-w-[90px] text-slate-400">2003 - 2005</span>
+                                            <span>공군 제3훈련 비행단 수의장교</span>
+                                        </li>
+                                        <li class="flex gap-4 items-start">
+                                            <span class="font-bold min-w-[90px] text-slate-400">2005 - 2011</span>
+                                            <span>바이엘코리아 VC (Veterinarian Consultant)</span>
+                                        </li>
+                                        <li class="flex gap-4 items-start">
+                                            <span class="font-bold min-w-[90px] text-amber-600">2011 - 현재</span>
+                                            <span class="font-medium text-slate-900">밀양 참좋은동물병원 원장 및 밀양시 공수의사</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- Awards -->
+                                <div>
+                                    <h4 class="flex items-center gap-2 text-base font-bold text-slate-900 mb-3 text-amber-700">
+                                        <i data-lucide="award" class="w-4 h-4"></i>
+                                        수상 경력
+                                    </h4>
+                                    <ul class="space-y-2 text-slate-600 text-sm">
+                                        <li class="flex gap-4 items-start">
+                                            <span class="font-bold min-w-[50px] text-slate-400">2024</span>
+                                            <span>밀양 아리랑대축제 전국회화대회 입선</span>
+                                        </li>
+                                        <li class="flex gap-4 items-start">
+                                            <span class="font-bold min-w-[50px] text-slate-400">2024</span>
+                                            <span>종합문화예술경연대회 특선</span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                        <div class="text-center">
-                            <h3 class="text-xl font-bold text-slate-900 mb-1">이청담 원장</h3>
-                            <p class="text-amber-700 font-medium text-sm mb-2 uppercase tracking-wider">Head of Internal Medicine</p>
-                            <div class="w-8 h-px bg-slate-200 mx-auto my-3"></div>
-                            <p class="text-slate-500 text-sm">내과 심화진료 / 심장내과 / 노령견 케어</p>
-                        </div>
                     </div>
-                    <!-- Doctor 3 -->
-                    <div class="group relative">
-                        <div class="aspect-[3/4] overflow-hidden rounded-sm bg-slate-100 mb-6 relative">
-                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=1000&auto=format&fit=crop" alt="박수의 과장" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105 filter grayscale group-hover:grayscale-0" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                                <p class="text-white text-sm font-light">"생명 존중을 최우선 가치로 여기며, <br/>정직하고 정확한 진료를 약속합니다."</p>
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <h3 class="text-xl font-bold text-slate-900 mb-1">박수의 과장</h3>
-                            <p class="text-amber-700 font-medium text-sm mb-2 uppercase tracking-wider">Veterinary Specialist</p>
-                            <div class="w-8 h-px bg-slate-200 mx-auto my-3"></div>
-                            <p class="text-slate-500 text-sm">영상의학 / 고양이 전문 클리닉</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-16 text-center">
-                    <a href="#contact" class="inline-block border border-slate-900 text-slate-900 px-8 py-3 hover:bg-slate-900 hover:text-white transition-colors duration-300 text-sm font-bold uppercase tracking-widest">
-                        의료진 전체보기
-                    </a>
                 </div>
             </div>
         </section>
@@ -518,7 +457,7 @@
                             <p class="text-slate-600 text-sm leading-relaxed line-clamp-3">갑자기 호흡곤란이 와서 새벽 3시에 달려갔는데, 신속한 응급처치로 위기를 넘겼습니다. 24시라 너무 다행이에요.</p>
                         </div>
                         <div class="flex items-center gap-3 pt-6 border-t border-slate-100 mt-auto">
-                            <div class="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-lg">🐱</div>
+                            <div class="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-lg">🐶</div>
                             <div>
                                 <p class="text-sm font-bold text-slate-900">루이</p>
                                 <p class="text-xs text-slate-500">브리티쉬 숏헤어 (4세)</p>
@@ -565,8 +504,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                 <div>
-                    <h3 class="text-2xl font-serif font-bold text-white mb-6">NOBLE</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">노블 24시 동물의료센터는 생명을 존중하는 마음으로 최상의 진료 서비스를 제공합니다.</p>
+                    <h3 class="text-2xl font-serif font-bold text-white mb-6">참좋은</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">참좋은동물병원은 생명을 존중하는 마음으로 최상의 진료 서비스를 제공합니다.</p>
                     <div class="flex space-x-4">
                         <a href="#" class="hover:text-amber-400 transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
                         <a href="#" class="hover:text-amber-400 transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
@@ -578,11 +517,11 @@
                     <ul class="space-y-4">
                         <li class="flex items-start gap-3">
                             <i data-lucide="map-pin" class="text-amber-500 mt-1 flex-shrink-0 w-4 h-4"></i>
-                            <span class="text-sm">서울시 강남구 도산대로 123<br/>노블타워 1-3층</span>
+                            <span class="text-sm">경남 밀양시 밀양대로 1896 1층<br/>참좋은동물병원</span>
                         </li>
                         <li class="flex items-center gap-3">
                             <i data-lucide="phone" class="text-amber-500 flex-shrink-0 w-4 h-4"></i>
-                            <span class="text-sm">02-1234-5678</span>
+                            <span class="text-sm">055-351-3581</span>
                         </li>
                     </ul>
                 </div>
@@ -592,10 +531,11 @@
                         <li class="flex items-start gap-3">
                             <i data-lucide="clock" class="text-amber-500 mt-1 flex-shrink-0 w-4 h-4"></i>
                             <div class="text-sm">
-                                <strong class="text-white block mb-1">365일 24시간 응급진료</strong>
-                                <span class="block mb-2">연중무휴</span>
-                                <strong class="text-white block mb-1">일반 진료</strong>
-                                <span>오전 10:00 - 오후 09:00</span>
+                                <strong class="text-amber-500 block mb-1">일요일, 공휴일 휴무</strong>
+                                <span class="block mb-2"></span>
+                                <strong class="text-white block mb-1">진료시간</strong>
+                                <span class="block">월 ~ 금 : 오전 10:00 - 오후 06:00</span>
+                                <span class="block">토요일 : 오전 10:00 - 오후 03:00</span>
                             </div>
                         </li>
                     </ul>
@@ -605,15 +545,14 @@
                     <ul class="space-y-2 text-sm">
                         <li><a href="#about" class="hover:text-amber-400 transition-colors">병원 소개</a></li>
                         <li><a href="#team" class="hover:text-amber-400 transition-colors">의료진 소개</a></li>
-                        <li><a href="#services" class="hover:text-amber-400 transition-colors">진료 과목</a></li>
                         <li><a href="#stats" class="hover:text-amber-400 transition-colors">수술 센터</a></li>
                         <li><a href="#" class="hover:text-amber-400 transition-colors">비급여 진료비 안내</a></li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-slate-800 mt-16 pt-8 text-center text-xs text-slate-500">
-                <p>© 2024 Noble Animal Medical Center. All rights reserved.</p>
-                <p class="mt-2">사업자등록번호: 123-45-67890 | 대표: 김노블</p>
+                <p>© 2024 Chamjoeun Animal Medical Center. All rights reserved.</p>
+                <p class="mt-2">사업자등록번호: 123-45-67890 | 대표: 문현철</p>
             </div>
         </div>
     </footer>
@@ -628,7 +567,6 @@
       const logoCircle = document.getElementById('logo-circle');
       const logoText = document.getElementById('logo-text');
       const logoSub = document.getElementById('logo-sub');
-      const headerCta = document.getElementById('header-cta');
       const navLinks = document.querySelectorAll('.nav-link');
       const mobileMenuBtn = document.getElementById('mobile-menu-btn');
       const mobileMenuIcon = mobileMenuBtn.querySelector('svg');
@@ -651,9 +589,6 @@
           logoSub.classList.remove('text-slate-200');
           logoSub.classList.add('text-slate-600');
           
-          headerCta.classList.remove('border-white', 'text-white', 'hover:bg-white', 'hover:text-primary');
-          headerCta.classList.add('border-primary', 'text-primary', 'hover:bg-primary', 'hover:text-white');
-          
           mobileMenuBtn.classList.remove('text-white');
           mobileMenuBtn.classList.add('text-slate-900');
 
@@ -673,9 +608,6 @@
           
           logoSub.classList.add('text-slate-200');
           logoSub.classList.remove('text-slate-600');
-
-          headerCta.classList.add('border-white', 'text-white', 'hover:bg-white', 'hover:text-primary');
-          headerCta.classList.remove('border-primary', 'text-primary', 'hover:bg-primary', 'hover:text-white');
 
           mobileMenuBtn.classList.add('text-white');
           mobileMenuBtn.classList.remove('text-slate-900');
@@ -765,6 +697,16 @@
 
       const statCards = document.querySelectorAll('.stat-card');
       statCards.forEach(card => statsObserver.observe(card));
+
+      // Set Current Date
+      const dateElement = document.getElementById('current-date');
+      if (dateElement) {
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = today.getMonth() + 1;
+        const day = today.getDate();
+        dateElement.innerText = `${year}년 ${month}월 ${day}일`;
+      }
 
     </script>
 <script type="module" src="/index.tsx"></script>
