@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>진료비 안내 - 참좋은동물병원</title>
+    <meta name="description" content="참좋은동물병원의 투명하고 합리적인 진료비를 안내해 드립니다." />
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Noto Sans KR"', 'sans-serif'],
+              serif: ['"Playfair Display"', 'serif'],
+            },
+            colors: {
+              primary: '#0f172a', // Slate 900
+              secondary: '#b45309', // Amber 700
+              gold: '#d4af37',
+              'gold-light': '#f3e5ab',
+            },
+          }
+        }
+      }
+    </script>
+    <style>
+      html { scroll-behavior: smooth; }
+      body { -webkit-font-smoothing: antialiased; }
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #f1f1f1; }
+      ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+      ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans selection:bg-amber-100 selection:text-amber-900 relative">
+
+    <!-- Header -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-md py-3">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+               <div class="w-10 h-10 rounded-full flex items-center justify-center border-2 transition-colors border-slate-900 text-slate-900">
+                 <span class="font-serif font-bold text-xl">C</span>
+               </div>
+               <div class="flex flex-col">
+                 <span class="text-xl font-bold tracking-tight transition-colors text-slate-900">
+                   참좋은
+                 </span>
+                 <span class="text-xs tracking-widest transition-colors text-slate-600">
+                   ANIMAL MEDICAL CENTER
+                 </span>
+               </div>
+            </a>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
+            <a href="index.html#greetings" class="text-sm font-medium text-slate-800 hover:text-amber-500 transition-colors">인사말</a>
+            <a href="#" class="text-sm font-bold text-amber-600 transition-colors">진료비안내</a>
+            <a href="index.html#neutering" class="text-sm font-medium text-slate-800 hover:text-amber-500 transition-colors">중성화수술</a>
+            <a href="index.html#stemcell" class="text-sm font-medium text-slate-800 hover:text-amber-500 transition-colors">줄기세포/엑소좀 치료(준비중)</a>
+            <a href="index.html#promotion" class="text-sm font-medium text-slate-800 hover:text-amber-500 transition-colors">홍보자료</a>
+          </nav>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-900">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-lg md:hidden border-t">
+          <div class="flex flex-col py-4">
+            <a href="index.html#greetings" class="px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">인사말</a>
+            <a href="#" class="px-6 py-3 text-amber-600 font-bold bg-amber-50">진료비안내</a>
+            <a href="index.html#neutering" class="px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">중성화수술</a>
+            <a href="index.html#stemcell" class="px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">줄기세포/엑소좀 치료(준비중)</a>
+            <a href="index.html#promotion" class="px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">홍보자료</a>
+          </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-24 min-h-screen flex flex-col">
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-12 md:py-24 bg-white flex-grow">
+             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="text-amber-600 font-bold tracking-widest text-sm uppercase mb-3 block">Pricing Guide</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+                        투명하고 합리적인 <br class="md:hidden" />
+                        <span class="text-amber-700">진료비 안내</span>
+                    </h2>
+                    <p class="text-slate-600 max-w-2xl mx-auto">
+                         참좋은동물병원은 보호자님이 안심하고 진료받으실 수 있도록 주요 진료 항목의 비용을 투명하게 공개합니다.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Pricing Card 1 -->
+                    <div class="border border-slate-200 rounded-2xl p-8 hover:shadow-xl hover:border-amber-200 transition-all duration-300">
+                         <div class="flex items-center gap-3 mb-6">
+                             <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-amber-600">
+                                 <i data-lucide="stethoscope" class="w-5 h-5"></i>
+                             </div>
+                             <h3 class="text-xl font-bold text-slate-900">기본 진료</h3>
+                         </div>
+                         <ul class="space-y-4">
+                             <li class="flex justify-between items-center text-sm">
+                                 <span class="text-slate-600">초진 진찰료</span>
+                                 <span class="font-bold text-slate-900">11,000 원 ~</span>
+                             </li>
+                             <li class="flex justify-between items-center text-sm">
+                                 <span class="text-slate-600">재진 진찰료</span>
+                                 <span class="font-bold text-slate-900">5,500 원 ~</span>
+                             </li>
+                             <li class="flex justify-between items-center text-sm">
+                                 <span class="text-slate-600">야간 응급 진료</span>
+                                 <span class="font-bold text-slate-900">55,000 원 ~</span>
+                             </li>
+                         </ul>
+                    </div>
+
+                    <!-- Pricing Card 2 -->
+                    <div class="border border-slate-200 rounded-2xl p-8 hover:shadow-xl hover:border-amber-200 transition-all duration-300">
+                         <div class="flex items-center gap-3 mb-6">
+                             <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                                 <i data-lucide="syringe" class="w-5 h-5"></i>
+                             </div>
+                             <h3 class="text-xl font-bold text-slate-900">예방 접종</h3>
+                         </div>
+                         <ul class="space-y-4">
+                             <li class="flex justify-between items-center text-sm">
+                                 <span class="text-slate-600">종합 백신 (DHPPL)</span>
+                                 <span class="font-bold text-slate-900">25,000 원</span>
+                             </li>
+                             <li class="flex justify-between items-center text-sm">
+                                 <span class="text-slate-600">코로나 장염</span>
+                                 <span class="font-bold text-slate-900">25,000 원</span>
+                             </li>
+                             <li class="flex justify-between items-center text-sm">
+                                 <span class="text-slate-600">켄넬코프</span>
+                                 <span class="font-bold text-slate-900">25,000 원</span>
+                             </li>
+                         </ul>
+                    </div>
+
+                    <!-- Pricing Card 3 -->
+                    <div class="border border-slate-200 rounded-2xl p-8 hover:shadow-xl hover:border-amber-200 transition-all duration-300">
+                         <div class="flex items-center gap-3 mb-6">
+                             <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                                 <i data-lucide="scissors" class="w-5 h-5"></i>
+                             </div>
+                             <h3 class="text-xl font-bold text-slate-900">중성화 수술</h3>
+                         </div>
+                         <ul class="space-y-4">
+                             <li class="flex justify-between items-center text-sm">
+                                 <span class="text-slate-600">수컷 (5kg 미만)</span>
+                                 <span class="font-bold text-slate-900">150,000 원 ~</span>
+                             </li>
+                             <li class="flex justify-between items-center text-sm">
+                                 <span class="text-slate-600">암컷 (5kg 미만)</span>
+                                 <span class="font-bold text-slate-900">350,000 원 ~</span>
+                             </li>
+                             <li class="text-xs text-slate-400 mt-2">
+                                 * 마취 전 검사 비용 별도 / 체중에 따라 변동 가능
+                             </li>
+                         </ul>
+                    </div>
+                </div>
+                <div class="mt-8 text-center text-xs text-slate-500">
+                    * 위 금액은 부가세 포함 금액이며, 반려동물의 상태와 체중에 따라 실제 비용은 달라질 수 있습니다. 정확한 비용은 내원 후 상담 부탁드립니다.
+                </div>
+             </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-slate-900 text-slate-300">
+        <div class="w-full h-96 bg-slate-200 relative">
+            <iframe 
+                title="참좋은동물병원 위치"
+                src="https://maps.google.com/maps?q=경남%20밀양시%20밀양대로%201896&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                class="w-full h-full transition-all duration-700"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div>
+                    <h3 class="text-2xl font-serif font-bold text-white mb-6">참좋은</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">참좋은동물병원은 생명을 존중하는 마음으로 최상의 진료 서비스를 제공합니다.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-amber-400 transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                        <a href="#" class="hover:text-amber-400 transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                        <a href="#" class="hover:text-amber-400 transition-colors"><i data-lucide="youtube" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Contact Us</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="text-amber-500 mt-1 flex-shrink-0 w-4 h-4"></i>
+                            <span class="text-sm">경남 밀양시 밀양대로 1896 1층<br/>참좋은동물병원</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="phone" class="text-amber-500 flex-shrink-0 w-4 h-4"></i>
+                            <span class="text-sm">055-351-3581</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Hours</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="clock" class="text-amber-500 mt-1 flex-shrink-0 w-4 h-4"></i>
+                            <div class="text-sm">
+                                <strong class="text-amber-500 block mb-1">일요일, 공휴일 휴무</strong>
+                                <span class="block mb-2"></span>
+                                <strong class="text-white block mb-1">진료시간</strong>
+                                <span class="block">월 ~ 금 : 오전 10:00 - 오후 06:00</span>
+                                <span class="block">토요일 : 오전 10:00 - 오후 03:00</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Quick Menu</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html#greetings" class="hover:text-amber-400 transition-colors">인사말</a></li>
+                        <li><a href="pricing.html" class="hover:text-amber-400 transition-colors">진료비안내</a></li>
+                        <li><a href="index.html#neutering" class="hover:text-amber-400 transition-colors">중성화수술</a></li>
+                        <li><a href="index.html#promotion" class="hover:text-amber-400 transition-colors">홍보자료</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 mt-16 pt-8 text-center text-xs text-slate-500">
+                <p>© 2024 Chamjoeun Animal Medical Center. All rights reserved.</p>
+                <p class="mt-2">사업자등록번호: 123-45-67890 | 대표: 문현철</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+      // Initialize Lucide Icons
+      lucide.createIcons();
+
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      let isMobileMenuOpen = false;
+
+      mobileMenuBtn.addEventListener('click', () => {
+        isMobileMenuOpen = !isMobileMenuOpen;
+        if (isMobileMenuOpen) {
+           mobileMenu.classList.remove('hidden');
+        } else {
+           mobileMenu.classList.add('hidden');
+        }
+      });
+    </script>
+</body>
+</html>
