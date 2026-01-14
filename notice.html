@@ -3,18 +3,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>찾아오시는 길 - 참좋은동물병원</title>
-    <meta name="description" content="참좋은동물병원 위치 및 주차 안내입니다. 병원 옆 KT전화국 주차장을 이용하세요." />
+    <title>공지사항 - 참좋은동물병원</title>
+    <meta name="description" content="참좋은동물병원의 새로운 소식과 공지사항을 알려드립니다." />
     
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     
     <script>
@@ -65,7 +58,7 @@
                     <div class="bg-white rounded-lg shadow-xl overflow-hidden border border-slate-100">
                         <a href="index.html#greetings" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors border-b border-slate-50">인사말</a>
                         <a href="clinic-hours.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors border-b border-slate-50">진료시간안내</a>
-                        <a href="location.html" class="block px-4 py-3 text-sm font-bold bg-amber-50 text-amber-700">찾아오시는길</a>
+                        <a href="location.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors">찾아오시는길</a>
                     </div>
                 </div>
             </div>
@@ -90,7 +83,19 @@
             </div>
 
             <a href="stemcell.html" class="text-sm font-medium text-slate-800 hover:text-amber-500 transition-colors">줄기세포/엑소좀 치료(준비중)</a>
-            <a href="index.html#promotion" class="text-sm font-medium text-slate-800 hover:text-amber-500 transition-colors">커뮤니티</a>
+            
+            <div class="relative group">
+                <button class="text-sm font-bold text-amber-600 transition-colors flex items-center gap-1 py-4">
+                    커뮤니티
+                    <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                </button>
+                <div class="absolute left-1/2 -translate-x-1/2 pt-2 w-48 hidden group-hover:block">
+                    <div class="bg-white rounded-lg shadow-xl overflow-hidden border border-slate-100">
+                        <a href="notice.html" class="block px-4 py-3 text-sm font-bold bg-amber-50 text-amber-700 border-b border-slate-50">공지사항</a>
+                        <a href="tv-appearance.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors">방송출연</a>
+                    </div>
+                </div>
+            </div>
           </nav>
 
           <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-900">
@@ -110,7 +115,7 @@
                 <div id="mobile-about-menu" class="hidden bg-slate-50 border-y border-slate-100">
                     <a href="index.html#greetings" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">인사말</a>
                     <a href="clinic-hours.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">진료시간안내</a>
-                    <a href="location.html" class="block px-10 py-3 text-sm font-bold text-amber-600">찾아오시는길</a>
+                    <a href="location.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">찾아오시는길</a>
                 </div>
             </div>
             <a href="pricing.html" class="mobile-link px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">진료비안내</a>
@@ -129,7 +134,16 @@
                 </div>
             </div>
             <a href="stemcell.html" class="mobile-link px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">줄기세포/엑소좀 치료(준비중)</a>
-            <a href="index.html#promotion" class="mobile-link px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">커뮤니티</a>
+            <div>
+                <button id="mobile-community-btn" class="w-full flex justify-between items-center px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">
+                    커뮤니티
+                    <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" id="mobile-community-icon"></i>
+                </button>
+                <div id="mobile-community-menu" class="hidden bg-slate-50 border-y border-slate-100">
+                    <a href="notice.html" class="block px-10 py-3 text-sm font-bold text-amber-600">공지사항</a>
+                    <a href="tv-appearance.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">방송출연</a>
+                </div>
+            </div>
           </div>
       </div>
     </header>
@@ -137,144 +151,70 @@
     <main class="pt-24 min-h-screen">
         <section class="py-24 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <!-- Title -->
                 <div class="text-center mb-16">
-                    <span class="text-amber-600 font-bold tracking-widest text-sm uppercase mb-3 block">Location & Parking</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">찾아오시는 길</h2>
-                    <p class="text-slate-600">참좋은동물병원으로 오시는 길을 안내해 드립니다.</p>
+                    <span class="text-amber-600 font-bold tracking-widest text-sm uppercase mb-3 block">Notice</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">공지사항</h2>
+                    <p class="text-slate-600">참좋은동물병원의 새로운 소식을 알려드립니다.</p>
                 </div>
 
-                <!-- Map & Info Grid -->
-                <div class="grid lg:grid-cols-3 gap-8 mb-16">
-                    <!-- Map (Span 2) -->
-                    <div class="lg:col-span-2 h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-slate-100 relative">
-                        <iframe 
-                            title="참좋은동물병원 위치"
-                            src="https://maps.google.com/maps?q=경남%20밀양시%20밀양대로%201896&t=&z=17&ie=UTF8&iwloc=&output=embed"
-                            width="100%" 
-                            height="100%" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
-
-                    <!-- Info (Span 1) -->
-                    <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 flex flex-col justify-center gap-8">
-                        <div>
-                            <div class="flex items-center gap-3 mb-2">
-                                <div class="w-10 h-10 rounded-full bg-amber-50 flex items-center justify-center text-amber-600">
-                                    <i data-lucide="map-pin" class="w-5 h-5"></i>
-                                </div>
-                                <h3 class="text-xl font-bold text-slate-900">주소</h3>
-                            </div>
-                            <p class="text-slate-600 pl-13 text-lg">경남 밀양시 밀양대로 1896 1층<br/>(내이동 1187-1)</p>
-                        </div>
-                        
-                        <div>
-                            <div class="flex items-center gap-3 mb-2">
-                                <div class="w-10 h-10 rounded-full bg-amber-50 flex items-center justify-center text-amber-600">
-                                    <i data-lucide="phone" class="w-5 h-5"></i>
-                                </div>
-                                <h3 class="text-xl font-bold text-slate-900">대표전화</h3>
-                            </div>
-                            <p class="text-slate-900 pl-13 text-2xl font-bold">055-351-3581</p>
-                        </div>
-
-                        <div>
-                            <div class="flex items-center gap-3 mb-2">
-                                <div class="w-10 h-10 rounded-full bg-amber-50 flex items-center justify-center text-amber-600">
-                                    <i data-lucide="bus" class="w-5 h-5"></i>
-                                </div>
-                                <h3 class="text-xl font-bold text-slate-900">대중교통</h3>
-                            </div>
-                            <p class="text-slate-600 pl-13">밀양 시외버스터미널 도보 10분</p>
-                        </div>
+                <!-- Board Container -->
+                <div class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead class="bg-slate-50 border-b border-slate-200">
+                                <tr>
+                                    <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider w-20 text-center">No</th>
+                                    <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">제목</th>
+                                    <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider w-32 text-center">작성자</th>
+                                    <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider w-32 text-center">날짜</th>
+                                    <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider w-24 text-center">관리</th>
+                                </tr>
+                            </thead>
+                            <tbody id="notice-list" class="divide-y divide-slate-100">
+                                <!-- JS will populate this -->
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
-                <!-- Parking Section -->
-                <div class="bg-slate-50 rounded-3xl p-8 md:p-12 border border-slate-200">
-                    <div class="grid md:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <span class="text-amber-600 font-bold tracking-widest text-sm uppercase mb-3 block">Parking Guide</span>
-                            <h3 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6">주차 안내</h3>
-                            <div class="space-y-6">
-                                <div class="flex gap-4">
-                                    <div class="flex-shrink-0 mt-1">
-                                        <i data-lucide="parking-circle" class="w-8 h-8 text-slate-400"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="text-lg font-bold text-slate-900 mb-2">전용 주차장 이용</h4>
-                                        <p class="text-slate-600 leading-relaxed">
-                                            병원 바로 옆 <strong class="text-slate-900 bg-amber-100 px-1">KT전화국 주차장</strong>을 이용하시면 됩니다.<br/>
-                                            넓고 쾌적한 주차 공간이 마련되어 있어 진료 시간 동안 편리하게 이용하실 수 있습니다.
-                                        </p>
-                                    </div>
-                                </div>
+                <!-- Write Button -->
+                <div class="mt-6 flex justify-end">
+                    <button onclick="openWriteModal()" class="flex items-center gap-2 bg-slate-900 text-white px-6 py-3 rounded-lg hover:bg-slate-800 transition-colors text-sm font-medium">
+                        <i data-lucide="pen-square" class="w-4 h-4"></i>
+                        글쓰기
+                    </button>
+                </div>
+
+                <!-- Write Modal -->
+                <div id="write-modal" class="fixed inset-0 bg-black/50 z-[60] hidden flex items-center justify-center p-4 backdrop-blur-sm">
+                    <div class="bg-white rounded-2xl w-full max-w-2xl shadow-2xl overflow-hidden animate-fade-in-up">
+                        <div class="px-8 py-6 border-b border-slate-100 flex justify-between items-center bg-slate-50">
+                            <h3 class="text-lg font-bold text-slate-900">공지사항 작성</h3>
+                            <button onclick="closeWriteModal()" class="text-slate-400 hover:text-slate-600">
+                                <i data-lucide="x" class="w-6 h-6"></i>
+                            </button>
+                        </div>
+                        <div class="p-8 space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">제목</label>
+                                <input type="text" id="post-title" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition-all" placeholder="제목을 입력하세요">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">작성자</label>
+                                <input type="text" id="post-author" value="관리자" class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 text-slate-500 cursor-not-allowed" readonly>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">내용</label>
+                                <textarea id="post-content" rows="6" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition-all resize-none" placeholder="내용을 입력하세요"></textarea>
                             </div>
                         </div>
-                        <div class="relative rounded-2xl overflow-hidden shadow-xl group">
-                            <img src="parking.jpg" alt="KT전화국 주차장" class="w-full h-64 md:h-80 object-cover transition-transform duration-500 group-hover:scale-105">
-                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                                <p class="text-white font-medium flex items-center gap-2">
-                                    <i data-lucide="map-pin" class="w-4 h-4 text-amber-400"></i>
-                                    병원 옆 KT전화국 주차장
-                                </p>
-                            </div>
+                        <div class="px-8 py-6 bg-slate-50 border-t border-slate-100 flex justify-end gap-3">
+                            <button onclick="closeWriteModal()" class="px-6 py-2.5 rounded-lg border border-slate-300 text-slate-600 hover:bg-slate-100 text-sm font-medium transition-colors">취소</button>
+                            <button onclick="submitPost()" class="px-6 py-2.5 rounded-lg bg-amber-600 text-white hover:bg-amber-700 text-sm font-medium transition-colors">등록하기</button>
                         </div>
                     </div>
                 </div>
 
-            </div>
-        </section>
-        
-        <!-- Hero Section (for design consistency) -->
-        <section id="home" class="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden hidden">
-            <div class="absolute inset-0 z-0">
-                <video autoplay loop muted playsinline class="w-full h-full object-cover object-center">
-                    <source src="bground.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-transparent"></div>
-            </div>
-            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20">
-                <div class="max-w-2xl text-white">
-                    <div class="flex items-center gap-2 mb-6 animate-fade-in-up">
-                        <span class="h-px w-12 bg-amber-500 inline-block"></span>
-                        <span class="text-amber-500 font-bold uppercase tracking-widest text-sm">SPRAY & NEUTER CLINIC</span>
-                    </div>
-                    <h1 class="text-5xl md:text-7xl font-serif font-bold leading-tight mb-6 text-shadow-lg animate-fade-in-up" style="animation-delay: 0.1s;">
-                        중성화 수술 전문 <br />
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-amber-500">참좋은동물병원</span>
-                    </h1>
-                    <p class="text-lg md:text-xl text-slate-300 mb-10 leading-relaxed max-w-lg animate-fade-in-up" style="animation-delay: 0.2s;">
-                        123.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style="animation-delay: 0.3s;">
-                        <a href="#contact" class="group inline-flex items-center justify-center gap-2 bg-amber-600 text-white px-8 py-4 rounded-sm text-lg font-medium hover:bg-amber-700 transition-all duration-300 shadow-lg shadow-amber-900/20">
-                            진료 예약하기
-                            <i data-lucide="arrow-right" class="group-hover:translate-x-1 transition-transform"></i>
-                        </a>
-                    </div>
-                    <div class="mt-16 grid grid-cols-2 gap-8 border-t border-white/10 pt-8 animate-fade-in-up" style="animation-delay: 0.4s;">
-                        <div class="text-center sm:text-left">
-                            <div class="flex items-center gap-2 mb-1 justify-center sm:justify-start">
-                                <i data-lucide="shield-check" class="text-amber-500 w-5 h-5"></i>
-                                <span class="font-bold text-lg">Specialist</span>
-                            </div>
-                            <p class="text-sm text-slate-400">중성화수술전문병원</p>
-                        </div>
-                        <div class="text-center sm:text-left">
-                            <div class="flex items-center gap-2 mb-1 justify-center sm:justify-start">
-                                <i data-lucide="heart" class="text-amber-500 w-5 h-5"></i>
-                                <span class="font-bold text-lg">Care</span>
-                            </div>
-                            <p class="text-sm text-slate-400">1:1 맞춤 케어</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
     </main>
@@ -377,6 +317,124 @@
 
       setupSubmenu('mobile-about-btn', 'mobile-about-menu', 'mobile-about-icon');
       setupSubmenu('mobile-neutering-btn', 'mobile-neutering-menu', 'mobile-neutering-icon');
+      setupSubmenu('mobile-community-btn', 'mobile-community-menu', 'mobile-community-icon');
+
+      // Notice Board Logic (Simulated with LocalStorage)
+      const noticeList = document.getElementById('notice-list');
+      const writeModal = document.getElementById('write-modal');
+      
+      // Default Data
+      const defaultNotices = [
+          { id: 1, title: '참좋은동물병원 홈페이지가 새롭게 오픈했습니다.', author: '관리자', date: '2026.01.01', views: 125 },
+          { id: 2, title: '2026년 설 연휴 진료 안내', author: '관리자', date: '2026.02.10', views: 89 },
+          { id: 3, title: '심장사상충 예방 캠페인 안내', author: '관리자', date: '2026.03.01', views: 245 }
+      ];
+
+      // Load Data
+      function loadNotices() {
+          const storedNotices = localStorage.getItem('notices');
+          let notices = [];
+          if (storedNotices) {
+              notices = JSON.parse(storedNotices);
+          } else {
+              notices = defaultNotices;
+              localStorage.setItem('notices', JSON.stringify(notices));
+          }
+          renderNotices(notices);
+      }
+
+      // Render Data
+      function renderNotices(notices) {
+          noticeList.innerHTML = '';
+          // Sort by ID descending
+          const sorted = [...notices].sort((a, b) => b.id - a.id);
+          
+          sorted.forEach(notice => {
+              const row = document.createElement('tr');
+              row.className = 'hover:bg-slate-50 transition-colors group';
+              row.innerHTML = `
+                  <td class="px-6 py-4 text-center text-sm text-slate-500 font-medium">${notice.id}</td>
+                  <td class="px-6 py-4">
+                      <a href="#" class="text-sm font-medium text-slate-900 hover:text-amber-600 transition-colors block">
+                          ${notice.title}
+                          ${isNew(notice.date) ? '<span class="ml-2 inline-block px-1.5 py-0.5 text-[10px] font-bold text-red-600 bg-red-100 rounded">N</span>' : ''}
+                      </a>
+                  </td>
+                  <td class="px-6 py-4 text-center text-sm text-slate-500">${notice.author}</td>
+                  <td class="px-6 py-4 text-center text-sm text-slate-400 font-light">${notice.date}</td>
+                  <td class="px-6 py-4 text-center">
+                      <button onclick="deletePost(${notice.id})" class="text-xs text-red-400 hover:text-red-600 p-1 rounded hover:bg-red-50 transition-colors opacity-0 group-hover:opacity-100" title="삭제">
+                          <i data-lucide="trash-2" class="w-4 h-4"></i>
+                      </button>
+                  </td>
+              `;
+              noticeList.appendChild(row);
+          });
+          lucide.createIcons();
+      }
+
+      function isNew(dateString) {
+          // Simple logic: if post is within last 7 days
+          // Note: In a real app, parse date properly. Here strictly comparing string format for demo.
+          // For now, let's just say posts from 2026 are "new" enough for demo.
+          return dateString.includes('2026'); 
+      }
+
+      // Modal Logic
+      function openWriteModal() {
+          writeModal.classList.remove('hidden');
+      }
+
+      function closeWriteModal() {
+          writeModal.classList.add('hidden');
+          // Clear inputs
+          document.getElementById('post-title').value = '';
+          document.getElementById('post-content').value = '';
+      }
+
+      // Submit Logic
+      function submitPost() {
+          const title = document.getElementById('post-title').value;
+          const content = document.getElementById('post-content').value;
+          
+          if (!title || !content) {
+              alert('제목과 내용을 모두 입력해주세요.');
+              return;
+          }
+
+          const storedNotices = JSON.parse(localStorage.getItem('notices') || '[]');
+          const newId = storedNotices.length > 0 ? Math.max(...storedNotices.map(n => n.id)) + 1 : 1;
+          const today = new Date();
+          const dateStr = `${today.getFullYear()}.${String(today.getMonth() + 1).padStart(2, '0')}.${String(today.getDate()).padStart(2, '0')}`;
+
+          const newPost = {
+              id: newId,
+              title: title,
+              author: '관리자',
+              date: dateStr,
+              views: 0
+          };
+
+          storedNotices.push(newPost);
+          localStorage.setItem('notices', JSON.stringify(storedNotices));
+          
+          loadNotices();
+          closeWriteModal();
+      }
+
+      // Delete Logic
+      window.deletePost = function(id) {
+          if(confirm('정말 이 게시물을 삭제하시겠습니까?')) {
+              let storedNotices = JSON.parse(localStorage.getItem('notices') || '[]');
+              storedNotices = storedNotices.filter(n => n.id !== id);
+              localStorage.setItem('notices', JSON.stringify(storedNotices));
+              loadNotices();
+          }
+      };
+
+      // Initial Load
+      document.addEventListener('DOMContentLoaded', loadNotices);
+
     </script>
 </body>
 </html>
