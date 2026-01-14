@@ -107,7 +107,19 @@
             </div>
 
             <a href="stemcell.html" class="text-sm font-medium text-slate-800 hover:text-amber-500 transition-colors">줄기세포/엑소좀 치료(준비중)</a>
-            <a href="index.html#promotion" class="text-sm font-medium text-slate-800 hover:text-amber-500 transition-colors">커뮤니티</a>
+            
+            <div class="relative group">
+                <button class="text-sm font-medium text-slate-800 hover:text-amber-500 transition-colors flex items-center gap-1 py-4">
+                    커뮤니티
+                    <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                </button>
+                <div class="absolute left-1/2 -translate-x-1/2 pt-2 w-48 hidden group-hover:block">
+                    <div class="bg-white rounded-lg shadow-xl overflow-hidden border border-slate-100">
+                        <a href="notice.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors border-b border-slate-50">공지사항</a>
+                        <a href="tv-appearance.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors">방송출연</a>
+                    </div>
+                </div>
+            </div>
           </nav>
 
           <!-- Mobile Menu Button -->
@@ -152,7 +164,18 @@
             </div>
 
             <a href="stemcell.html" class="px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">줄기세포/엑소좀 치료(준비중)</a>
-            <a href="index.html#promotion" class="px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">커뮤니티</a>
+            
+            <!-- Mobile Community Accordion -->
+            <div>
+                <button id="mobile-community-btn" class="w-full flex justify-between items-center px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">
+                    커뮤니티
+                    <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" id="mobile-community-icon"></i>
+                </button>
+                <div id="mobile-community-menu" class="hidden bg-slate-50 border-y border-slate-100">
+                    <a href="notice.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">공지사항</a>
+                    <a href="tv-appearance.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">방송출연</a>
+                </div>
+            </div>
           </div>
       </div>
     </header>
@@ -466,29 +489,22 @@
         }
       });
       
-      // Mobile Neutering Submenu Toggle
-      const mobileNeuteringBtn = document.getElementById('mobile-neutering-btn');
-      const mobileNeuteringMenu = document.getElementById('mobile-neutering-menu');
-      const mobileNeuteringIcon = document.getElementById('mobile-neutering-icon');
+      // Mobile Submenu Toggles
+      const setupSubmenu = (btnId, menuId, iconId) => {
+          const btn = document.getElementById(btnId);
+          const menu = document.getElementById(menuId);
+          const icon = document.getElementById(iconId);
+          if(btn) {
+              btn.addEventListener('click', () => {
+                  menu.classList.toggle('hidden');
+                  icon.classList.toggle('rotate-180');
+              });
+          }
+      };
 
-      if(mobileNeuteringBtn) {
-          mobileNeuteringBtn.addEventListener('click', () => {
-              mobileNeuteringMenu.classList.toggle('hidden');
-              mobileNeuteringIcon.classList.toggle('rotate-180');
-          });
-      }
-
-      // Mobile About Submenu Toggle
-      const mobileAboutBtn = document.getElementById('mobile-about-btn');
-      const mobileAboutMenu = document.getElementById('mobile-about-menu');
-      const mobileAboutIcon = document.getElementById('mobile-about-icon');
-
-      if(mobileAboutBtn) {
-          mobileAboutBtn.addEventListener('click', () => {
-              mobileAboutMenu.classList.toggle('hidden');
-              mobileAboutIcon.classList.toggle('rotate-180');
-          });
-      }
+      setupSubmenu('mobile-about-btn', 'mobile-about-menu', 'mobile-about-icon');
+      setupSubmenu('mobile-neutering-btn', 'mobile-neutering-menu', 'mobile-neutering-icon');
+      setupSubmenu('mobile-community-btn', 'mobile-community-menu', 'mobile-community-icon');
     </script>
 </body>
 </html>

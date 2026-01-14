@@ -28,6 +28,13 @@
     </script>
     <style>
       .group:hover .group-hover\:block { display: block; }
+      /* Line clamp for preview */
+      .line-clamp-1 {
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans">
@@ -167,7 +174,6 @@
                                     <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">제목</th>
                                     <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider w-32 text-center">작성자</th>
                                     <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider w-32 text-center">날짜</th>
-                                    <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider w-24 text-center">관리</th>
                                 </tr>
                             </thead>
                             <tbody id="notice-list" class="divide-y divide-slate-100">
@@ -177,40 +183,26 @@
                     </div>
                 </div>
 
-                <!-- Write Button -->
-                <div class="mt-6 flex justify-end">
-                    <button onclick="openWriteModal()" class="flex items-center gap-2 bg-slate-900 text-white px-6 py-3 rounded-lg hover:bg-slate-800 transition-colors text-sm font-medium">
-                        <i data-lucide="pen-square" class="w-4 h-4"></i>
-                        글쓰기
-                    </button>
-                </div>
-
-                <!-- Write Modal -->
-                <div id="write-modal" class="fixed inset-0 bg-black/50 z-[60] hidden flex items-center justify-center p-4 backdrop-blur-sm">
-                    <div class="bg-white rounded-2xl w-full max-w-2xl shadow-2xl overflow-hidden animate-fade-in-up">
-                        <div class="px-8 py-6 border-b border-slate-100 flex justify-between items-center bg-slate-50">
-                            <h3 class="text-lg font-bold text-slate-900">공지사항 작성</h3>
-                            <button onclick="closeWriteModal()" class="text-slate-400 hover:text-slate-600">
+                <!-- View Modal -->
+                <div id="view-modal" class="fixed inset-0 bg-black/50 z-[60] hidden flex items-center justify-center p-4 backdrop-blur-sm">
+                    <div class="bg-white rounded-2xl w-full max-w-2xl shadow-2xl overflow-hidden animate-fade-in-up max-h-[90vh] flex flex-col">
+                        <div class="px-8 py-6 border-b border-slate-100 flex justify-between items-start bg-slate-50">
+                            <div class="pr-8">
+                                <h3 id="view-title" class="text-xl font-bold text-slate-900 mb-2"></h3>
+                                <div class="flex items-center gap-4 text-xs text-slate-500">
+                                    <span id="view-author" class="font-medium bg-white border px-2 py-0.5 rounded"></span>
+                                    <span id="view-date"></span>
+                                </div>
+                            </div>
+                            <button onclick="closeViewModal()" class="text-slate-400 hover:text-slate-600 flex-shrink-0 mt-1">
                                 <i data-lucide="x" class="w-6 h-6"></i>
                             </button>
                         </div>
-                        <div class="p-8 space-y-6">
-                            <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-2">제목</label>
-                                <input type="text" id="post-title" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition-all" placeholder="제목을 입력하세요">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-2">작성자</label>
-                                <input type="text" id="post-author" value="관리자" class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 text-slate-500 cursor-not-allowed" readonly>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-2">내용</label>
-                                <textarea id="post-content" rows="6" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition-all resize-none" placeholder="내용을 입력하세요"></textarea>
-                            </div>
+                        <div class="p-8 overflow-y-auto">
+                            <div id="view-content" class="prose prose-slate max-w-none text-slate-700 leading-relaxed whitespace-pre-wrap"></div>
                         </div>
-                        <div class="px-8 py-6 bg-slate-50 border-t border-slate-100 flex justify-end gap-3">
-                            <button onclick="closeWriteModal()" class="px-6 py-2.5 rounded-lg border border-slate-300 text-slate-600 hover:bg-slate-100 text-sm font-medium transition-colors">취소</button>
-                            <button onclick="submitPost()" class="px-6 py-2.5 rounded-lg bg-amber-600 text-white hover:bg-amber-700 text-sm font-medium transition-colors">등록하기</button>
+                        <div class="px-8 py-4 bg-slate-50 border-t border-slate-100 flex justify-center">
+                            <button onclick="closeViewModal()" class="px-8 py-2.5 rounded-lg bg-slate-900 text-white hover:bg-slate-800 text-sm font-medium transition-colors">닫기</button>
                         </div>
                     </div>
                 </div>
@@ -319,121 +311,95 @@
       setupSubmenu('mobile-neutering-btn', 'mobile-neutering-menu', 'mobile-neutering-icon');
       setupSubmenu('mobile-community-btn', 'mobile-community-menu', 'mobile-community-icon');
 
-      // Notice Board Logic (Simulated with LocalStorage)
-      const noticeList = document.getElementById('notice-list');
-      const writeModal = document.getElementById('write-modal');
+      // --- NOTICE BOARD LOGIC (STATIC DATA FOR GITHUB PAGES) ---
       
-      // Default Data
-      const defaultNotices = [
-          { id: 1, title: '참좋은동물병원 홈페이지가 새롭게 오픈했습니다.', author: '관리자', date: '2026.01.01', views: 125 },
-          { id: 2, title: '2026년 설 연휴 진료 안내', author: '관리자', date: '2026.02.10', views: 89 },
-          { id: 3, title: '심장사상충 예방 캠페인 안내', author: '관리자', date: '2026.03.01', views: 245 }
+      /* 
+         중요: GitHub Pages는 정적 사이트이므로 데이터베이스가 없습니다.
+         따라서 공지사항을 추가하려면 아래 `notices` 배열에 직접 데이터를 입력하고 
+         코드를 업데이트(commit/push) 해야 합니다.
+         이렇게 하면 모든 방문자가 동일한 내용을 볼 수 있습니다.
+      */
+      
+      const notices = [
+          { 
+              id: 3, 
+              title: '심장사상충 예방 캠페인 안내', 
+              author: '관리자', 
+              date: '2026.03.01', 
+              content: '안녕하세요, 참좋은동물병원입니다.\n\n따뜻한 봄이 다가오면서 모기가 활동하기 시작합니다.\n우리 아이들의 건강을 위해 심장사상충 예방을 시작해주세요.\n\n본원에서는 매월 1일 심장사상충 예방 캠페인을 진행하고 있습니다.\n내원하셔서 검진 및 예방약을 처방받으시길 바랍니다.\n\n감사합니다.'
+          },
+          { 
+              id: 2, 
+              title: '2026년 설 연휴 진료 안내', 
+              author: '관리자', 
+              date: '2026.02.10', 
+              content: '2026년 설 연휴 진료 일정을 안내해드립니다.\n\n- 2월 16일(월): 정상 진료\n- 2월 17일(화) ~ 18일(수): 휴진\n\n응급 상황 발생 시에는 인근 24시 동물병원을 이용해주시기 바랍니다.\n가족과 함께 즐거운 명절 보내세요.'
+          },
+          { 
+              id: 1, 
+              title: '참좋은동물병원 홈페이지가 새롭게 오픈했습니다.', 
+              author: '관리자', 
+              date: '2026.01.01', 
+              content: '안녕하세요.\n참좋은동물병원 홈페이지가 리뉴얼 오픈하였습니다.\n\n앞으로 홈페이지를 통해 병원 소식과 진료 정보를 더욱 편리하게 확인하실 수 있습니다.\n많은 이용 부탁드립니다.\n\n감사합니다.'
+          }
       ];
 
-      // Load Data
-      function loadNotices() {
-          const storedNotices = localStorage.getItem('notices');
-          let notices = [];
-          if (storedNotices) {
-              notices = JSON.parse(storedNotices);
-          } else {
-              notices = defaultNotices;
-              localStorage.setItem('notices', JSON.stringify(notices));
-          }
-          renderNotices(notices);
-      }
+      const noticeList = document.getElementById('notice-list');
+      const viewModal = document.getElementById('view-modal');
 
-      // Render Data
-      function renderNotices(notices) {
+      // 1. 목록 렌더링 (Load Data)
+      function renderNotices() {
           noticeList.innerHTML = '';
-          // Sort by ID descending
-          const sorted = [...notices].sort((a, b) => b.id - a.id);
-          
-          sorted.forEach(notice => {
+          notices.forEach(notice => {
               const row = document.createElement('tr');
-              row.className = 'hover:bg-slate-50 transition-colors group';
+              row.className = 'hover:bg-slate-50 transition-colors group cursor-pointer';
+              row.onclick = () => openViewModal(notice.id); // 클릭 이벤트 추가
+              
               row.innerHTML = `
                   <td class="px-6 py-4 text-center text-sm text-slate-500 font-medium">${notice.id}</td>
                   <td class="px-6 py-4">
-                      <a href="#" class="text-sm font-medium text-slate-900 hover:text-amber-600 transition-colors block">
+                      <div class="text-sm font-medium text-slate-900 group-hover:text-amber-600 transition-colors line-clamp-1">
                           ${notice.title}
                           ${isNew(notice.date) ? '<span class="ml-2 inline-block px-1.5 py-0.5 text-[10px] font-bold text-red-600 bg-red-100 rounded">N</span>' : ''}
-                      </a>
+                      </div>
                   </td>
                   <td class="px-6 py-4 text-center text-sm text-slate-500">${notice.author}</td>
                   <td class="px-6 py-4 text-center text-sm text-slate-400 font-light">${notice.date}</td>
-                  <td class="px-6 py-4 text-center">
-                      <button onclick="deletePost(${notice.id})" class="text-xs text-red-400 hover:text-red-600 p-1 rounded hover:bg-red-50 transition-colors opacity-0 group-hover:opacity-100" title="삭제">
-                          <i data-lucide="trash-2" class="w-4 h-4"></i>
-                      </button>
-                  </td>
               `;
               noticeList.appendChild(row);
           });
           lucide.createIcons();
       }
 
+      // 날짜 체크 (최근 글 표시)
       function isNew(dateString) {
-          // Simple logic: if post is within last 7 days
-          // Note: In a real app, parse date properly. Here strictly comparing string format for demo.
-          // For now, let's just say posts from 2026 are "new" enough for demo.
-          return dateString.includes('2026'); 
+          const postDate = new Date(dateString.replace(/\./g, '-'));
+          const now = new Date();
+          const diffTime = Math.abs(now - postDate);
+          const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+          return diffDays <= 7; // 7일 이내 게시글에 N 표시
       }
 
-      // Modal Logic
-      function openWriteModal() {
-          writeModal.classList.remove('hidden');
+      // 2. 모달 열기 (View Logic)
+      function openViewModal(id) {
+          const notice = notices.find(n => n.id === id);
+          if (!notice) return;
+
+          document.getElementById('view-title').textContent = notice.title;
+          document.getElementById('view-author').textContent = notice.author;
+          document.getElementById('view-date').textContent = notice.date;
+          document.getElementById('view-content').textContent = notice.content;
+
+          viewModal.classList.remove('hidden');
       }
 
-      function closeWriteModal() {
-          writeModal.classList.add('hidden');
-          // Clear inputs
-          document.getElementById('post-title').value = '';
-          document.getElementById('post-content').value = '';
+      // 3. 모달 닫기
+      function closeViewModal() {
+          viewModal.classList.add('hidden');
       }
 
-      // Submit Logic
-      function submitPost() {
-          const title = document.getElementById('post-title').value;
-          const content = document.getElementById('post-content').value;
-          
-          if (!title || !content) {
-              alert('제목과 내용을 모두 입력해주세요.');
-              return;
-          }
-
-          const storedNotices = JSON.parse(localStorage.getItem('notices') || '[]');
-          const newId = storedNotices.length > 0 ? Math.max(...storedNotices.map(n => n.id)) + 1 : 1;
-          const today = new Date();
-          const dateStr = `${today.getFullYear()}.${String(today.getMonth() + 1).padStart(2, '0')}.${String(today.getDate()).padStart(2, '0')}`;
-
-          const newPost = {
-              id: newId,
-              title: title,
-              author: '관리자',
-              date: dateStr,
-              views: 0
-          };
-
-          storedNotices.push(newPost);
-          localStorage.setItem('notices', JSON.stringify(storedNotices));
-          
-          loadNotices();
-          closeWriteModal();
-      }
-
-      // Delete Logic
-      window.deletePost = function(id) {
-          if(confirm('정말 이 게시물을 삭제하시겠습니까?')) {
-              let storedNotices = JSON.parse(localStorage.getItem('notices') || '[]');
-              storedNotices = storedNotices.filter(n => n.id !== id);
-              localStorage.setItem('notices', JSON.stringify(storedNotices));
-              loadNotices();
-          }
-      };
-
-      // Initial Load
-      document.addEventListener('DOMContentLoaded', loadNotices);
+      // 초기 실행
+      document.addEventListener('DOMContentLoaded', renderNotices);
 
     </script>
 </body>
