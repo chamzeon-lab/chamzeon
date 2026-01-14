@@ -25,8 +25,8 @@
                         <div class="absolute left-1/2 -translate-x-1/2 pt-2 w-48 hidden group-hover:block">
                             <div class="bg-white rounded-lg shadow-xl overflow-hidden border border-slate-100">
                                 <a href="index.html#greetings" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors border-b border-slate-50">인사말</a>
-                                <a href="index.html#contact" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors border-b border-slate-50">진료시간안내</a>
-                                <a href="index.html#contact" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors">찾아오시는길</a>
+                                <a href="clinic-hours.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors border-b border-slate-50">진료시간안내</a>
+                                <a href="location.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors">찾아오시는길</a>
                             </div>
                         </div>
                     </div>
@@ -48,6 +48,45 @@
                     <a href="stemcell.html" class="text-sm font-bold text-amber-600 transition-colors">줄기세포/엑소좀 치료(준비중)</a>
                     <a href="index.html#promotion" class="text-sm font-medium text-slate-800 hover:text-amber-500 transition-colors">커뮤니티</a>
                 </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-900">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-lg md:hidden border-t max-h-[80vh] overflow-y-auto">
+            <div class="flex flex-col py-4">
+                <div>
+                    <button id="mobile-about-btn" class="w-full flex justify-between items-center px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">
+                        병원소개
+                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" id="mobile-about-icon"></i>
+                    </button>
+                    <div id="mobile-about-menu" class="hidden bg-slate-50 border-y border-slate-100">
+                        <a href="index.html#greetings" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">인사말</a>
+                        <a href="clinic-hours.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">진료시간안내</a>
+                        <a href="location.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">찾아오시는길</a>
+                    </div>
+                </div>
+                <a href="pricing.html" class="mobile-link px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">진료비안내</a>
+                <div>
+                    <button id="mobile-neutering-btn" class="w-full flex justify-between items-center px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">
+                        중성화수술
+                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" id="mobile-neutering-icon"></i>
+                    </button>
+                    <div id="mobile-neutering-menu" class="hidden bg-slate-50 border-y border-slate-100">
+                        <a href="neutering-process.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">중성화 수술 과정</a>
+                        <a href="neutering-micro-incision.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">초미세 절개 중성화 수술</a>
+                        <a href="neutering-cost.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">합리적인 수술 비용</a>
+                        <a href="neutering-care.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">수술 후 회복 관리</a>
+                        <a href="neutering-photos.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">중성화 수술 후 사진</a>
+                        <a href="neutering-reviews.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">중성화 수술 후기</a>
+                    </div>
+                </div>
+                <a href="stemcell.html" class="mobile-link px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">줄기세포/엑소좀 치료(준비중)</a>
+                <a href="index.html#promotion" class="mobile-link px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">커뮤니티</a>
             </div>
         </div>
     </header>
@@ -146,6 +185,39 @@
             </div>
         </div>
     </footer>
-    <script>lucide.createIcons();</script>
+
+    <script>
+      lucide.createIcons();
+
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      let isMobileMenuOpen = false;
+
+      mobileMenuBtn.addEventListener('click', () => {
+        isMobileMenuOpen = !isMobileMenuOpen;
+        if (isMobileMenuOpen) {
+           mobileMenu.classList.remove('hidden');
+        } else {
+           mobileMenu.classList.add('hidden');
+        }
+      });
+
+      // Mobile Submenus
+      const setupSubmenu = (btnId, menuId, iconId) => {
+          const btn = document.getElementById(btnId);
+          const menu = document.getElementById(menuId);
+          const icon = document.getElementById(iconId);
+          if(btn) {
+              btn.addEventListener('click', () => {
+                  menu.classList.toggle('hidden');
+                  icon.classList.toggle('rotate-180');
+              });
+          }
+      };
+
+      setupSubmenu('mobile-about-btn', 'mobile-about-menu', 'mobile-about-icon');
+      setupSubmenu('mobile-neutering-btn', 'mobile-neutering-menu', 'mobile-neutering-icon');
+    </script>
 </body>
 </html>
