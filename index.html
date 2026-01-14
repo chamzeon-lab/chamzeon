@@ -102,7 +102,21 @@
 
           <!-- Desktop Navigation -->
           <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
-            <a href="index.html#greetings" class="nav-link text-sm font-medium hover:text-amber-500 transition-colors text-white/90">인사말</a>
+            <!-- Hospital Intro Dropdown -->
+            <div class="relative group">
+                <button class="nav-link text-sm font-medium hover:text-amber-500 transition-colors text-white/90 flex items-center gap-1 py-4">
+                    병원소개
+                    <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                </button>
+                <div class="absolute left-1/2 -translate-x-1/2 pt-2 w-48 hidden group-hover:block">
+                    <div class="bg-white rounded-lg shadow-xl overflow-hidden border border-slate-100">
+                        <a href="index.html#greetings" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors border-b border-slate-50">인사말</a>
+                        <a href="index.html#contact" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors border-b border-slate-50">진료시간안내</a>
+                        <a href="index.html#contact" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors">찾아오시는길</a>
+                    </div>
+                </div>
+            </div>
+
             <a href="pricing.html" class="nav-link text-sm font-medium hover:text-amber-500 transition-colors text-white/90">진료비안내</a>
             
             <!-- Neutering Dropdown -->
@@ -123,8 +137,8 @@
                 </div>
             </div>
 
-            <a href="stemcell.html" class="nav-link text-sm font-medium hover:text-amber-500 transition-colors text-white/90">줄기세포/엑소좀</a>
-            <a href="index.html#promotion" class="nav-link text-sm font-medium hover:text-amber-500 transition-colors text-white/90">홍보자료</a>
+            <a href="stemcell.html" class="nav-link text-sm font-medium hover:text-amber-500 transition-colors text-white/90">줄기세포/엑소좀 치료(준비중)</a>
+            <a href="index.html#promotion" class="nav-link text-sm font-medium hover:text-amber-500 transition-colors text-white/90">커뮤니티</a>
           </nav>
 
           <!-- Mobile Menu Button -->
@@ -137,7 +151,19 @@
       <!-- Mobile Menu Overlay -->
       <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-lg md:hidden border-t max-h-[80vh] overflow-y-auto">
           <div class="flex flex-col py-4">
-            <a href="index.html#greetings" class="mobile-link px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">인사말</a>
+            <!-- Mobile Intro Accordion -->
+            <div>
+                <button id="mobile-about-btn" class="w-full flex justify-between items-center px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">
+                    병원소개
+                    <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" id="mobile-about-icon"></i>
+                </button>
+                <div id="mobile-about-menu" class="hidden bg-slate-50 border-y border-slate-100">
+                    <a href="index.html#greetings" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">인사말</a>
+                    <a href="index.html#contact" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">진료시간안내</a>
+                    <a href="index.html#contact" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">찾아오시는길</a>
+                </div>
+            </div>
+
             <a href="pricing.html" class="mobile-link px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">진료비안내</a>
             
             <!-- Mobile Neutering Accordion -->
@@ -157,7 +183,7 @@
             </div>
 
             <a href="stemcell.html" class="mobile-link px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">줄기세포/엑소좀 치료(준비중)</a>
-            <a href="index.html#promotion" class="mobile-link px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">홍보자료</a>
+            <a href="index.html#promotion" class="mobile-link px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">커뮤니티</a>
           </div>
       </div>
     </header>
@@ -204,7 +230,10 @@
         <!-- Hero Section -->
         <section id="home" class="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
             <div class="absolute inset-0 z-0">
-                <img src="https://picsum.photos/1920/1080?grayscale" alt="Veterinary Care" class="w-full h-full object-cover object-center" />
+                <video autoplay loop muted playsinline class="w-full h-full object-cover object-center">
+                    <source src="bground.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
                 <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-transparent"></div>
             </div>
             <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20">
@@ -529,13 +558,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                 <div>
-                    <h3 class="text-2xl font-serif font-bold text-white mb-6">참좋은</h3>
+                    <h3 class="text-2xl font-serif font-bold text-white mb-6">참좋은동물병원</h3>
                     <p class="text-slate-400 text-sm leading-relaxed mb-6">참좋은동물병원은 생명을 존중하는 마음으로 최상의 진료 서비스를 제공합니다.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="hover:text-amber-400 transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-                        <a href="#" class="hover:text-amber-400 transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
-                        <a href="#" class="hover:text-amber-400 transition-colors"><i data-lucide="youtube" class="w-5 h-5"></i></a>
-                    </div>
                 </div>
                 <div>
                     <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Contact Us</h4>
@@ -571,18 +595,17 @@
                         <li><a href="index.html#greetings" class="hover:text-amber-400 transition-colors">인사말</a></li>
                         <li><a href="pricing.html" class="hover:text-amber-400 transition-colors">진료비안내</a></li>
                         <li><a href="index.html#neutering" class="hover:text-amber-400 transition-colors">중성화수술</a></li>
-                        <li><a href="index.html#promotion" class="hover:text-amber-400 transition-colors">홍보자료</a></li>
+                        <li><a href="index.html#promotion" class="hover:text-amber-400 transition-colors">커뮤니티</a></li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-slate-800 mt-16 pt-8 text-center text-xs text-slate-500">
-                <p>© 2024 Chamjoeun Animal Medical Center. All rights reserved.</p>
-                <p class="mt-2">사업자등록번호: 123-45-67890 | 대표: 문현철</p>
+                <p>© 2026 Chamzeon Spray & Neuter Clinic. All rights reserved.</p>
+                <p class="mt-2">사업자등록번호: 615-16-96288 | 대표: 문현철</p>
             </div>
         </div>
     </footer>
 
-    <!-- Main Logic Script -->
     <script>
       // Initialize Lucide Icons
       lucide.createIcons();
@@ -675,6 +698,18 @@
           mobileNeuteringBtn.addEventListener('click', () => {
               mobileNeuteringMenu.classList.toggle('hidden');
               mobileNeuteringIcon.classList.toggle('rotate-180');
+          });
+      }
+
+      // Mobile About Submenu Toggle
+      const mobileAboutBtn = document.getElementById('mobile-about-btn');
+      const mobileAboutMenu = document.getElementById('mobile-about-menu');
+      const mobileAboutIcon = document.getElementById('mobile-about-icon');
+
+      if(mobileAboutBtn) {
+          mobileAboutBtn.addEventListener('click', () => {
+              mobileAboutMenu.classList.toggle('hidden');
+              mobileAboutIcon.classList.toggle('rotate-180');
           });
       }
 

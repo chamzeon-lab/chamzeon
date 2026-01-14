@@ -16,7 +16,21 @@
             <div class="flex justify-between items-center">
                 <div class="flex items-center"><a href="index.html" class="flex items-center gap-2 group"><div class="w-10 h-10 rounded-full flex items-center justify-center border-2 border-slate-900 text-slate-900"><span class="font-serif font-bold text-xl">C</span></div><div class="flex flex-col"><span class="text-xl font-bold tracking-tight text-slate-900">참좋은</span><span class="text-xs tracking-widest text-slate-600">SPRAY & NEUTER CLINIC</span></div></a></div>
                 <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
-                    <a href="index.html#greetings" class="text-sm font-medium text-slate-800 hover:text-amber-500 transition-colors">인사말</a>
+                    <!-- Hospital Intro Dropdown -->
+                    <div class="relative group">
+                        <button class="text-sm font-medium text-slate-800 hover:text-amber-500 transition-colors flex items-center gap-1 py-4">
+                            병원소개
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                        <div class="absolute left-1/2 -translate-x-1/2 pt-2 w-48 hidden group-hover:block">
+                            <div class="bg-white rounded-lg shadow-xl overflow-hidden border border-slate-100">
+                                <a href="index.html#greetings" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors border-b border-slate-50">인사말</a>
+                                <a href="index.html#contact" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors border-b border-slate-50">진료시간안내</a>
+                                <a href="index.html#contact" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors">찾아오시는길</a>
+                            </div>
+                        </div>
+                    </div>
+
                     <a href="pricing.html" class="text-sm font-medium text-slate-800 hover:text-amber-500 transition-colors">진료비안내</a>
                     <div class="relative group">
                         <button class="text-sm font-bold text-amber-600 transition-colors flex items-center gap-1 py-4">중성화수술<i data-lucide="chevron-down" class="w-4 h-4"></i></button>
@@ -25,14 +39,14 @@
                                 <a href="neutering-process.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors border-b border-slate-50">중성화 수술 과정</a>
                                 <a href="neutering-micro-incision.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors border-b border-slate-50">초미세 절개</a>
                                 <a href="neutering-cost.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors border-b border-slate-50">합리적인 비용</a>
-                                <a href="neutering-care.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors border-b border-slate-50">수술 후 회복 관리</a>
+                                <a href="neutering-care.html" class="block px-4 py-3 text-sm font-bold bg-amber-50 text-amber-700">수술 후 회복 관리</a>
                                 <a href="neutering-photos.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors border-b border-slate-50">수술 후 사진</a>
                                 <a href="neutering-reviews.html" class="block px-4 py-3 text-sm font-bold bg-amber-50 text-amber-700">수술 후기</a>
                             </div>
                         </div>
                     </div>
-                    <a href="stemcell.html" class="text-sm font-medium text-slate-800 hover:text-amber-500 transition-colors">줄기세포/엑소좀</a>
-                    <a href="index.html#promotion" class="text-sm font-medium text-slate-800 hover:text-amber-500 transition-colors">홍보자료</a>
+                    <a href="stemcell.html" class="text-sm font-medium text-slate-800 hover:text-amber-500 transition-colors">줄기세포/엑소좀 치료(준비중)</a>
+                    <a href="index.html#promotion" class="text-sm font-medium text-slate-800 hover:text-amber-500 transition-colors">커뮤니티</a>
                 </nav>
             </div>
         </div>
@@ -69,6 +83,72 @@
             </div>
         </section>
     </main>
+    
+    <!-- Footer -->
+    <footer id="contact" class="bg-slate-900 text-slate-300">
+        <div class="w-full h-96 bg-slate-200 relative">
+            <iframe 
+                title="참좋은동물병원 위치"
+                src="https://maps.google.com/maps?q=경남%20밀양시%20밀양대로%201896&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                class="w-full h-full transition-all duration-700"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div>
+                    <h3 class="text-2xl font-serif font-bold text-white mb-6">참좋은동물병원</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">참좋은동물병원은 생명을 존중하는 마음으로 최상의 진료 서비스를 제공합니다.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Contact Us</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="text-amber-500 mt-1 flex-shrink-0 w-4 h-4"></i>
+                            <span class="text-sm">경남 밀양시 밀양대로 1896 1층<br/>참좋은동물병원</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="phone" class="text-amber-500 flex-shrink-0 w-4 h-4"></i>
+                            <span class="text-sm">055-351-3581</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Hours</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="clock" class="text-amber-500 mt-1 flex-shrink-0 w-4 h-4"></i>
+                            <div class="text-sm">
+                                <strong class="text-amber-500 block mb-1">일요일, 공휴일 휴무</strong>
+                                <span class="block mb-2"></span>
+                                <strong class="text-white block mb-1">진료시간</strong>
+                                <span class="block">월 ~ 금 : 오전 10:00 - 오후 06:00</span>
+                                <span class="block">토요일 : 오전 10:00 - 오후 03:00</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Quick Menu</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html#greetings" class="hover:text-amber-400 transition-colors">인사말</a></li>
+                        <li><a href="pricing.html" class="hover:text-amber-400 transition-colors">진료비안내</a></li>
+                        <li><a href="index.html#neutering" class="hover:text-amber-400 transition-colors">중성화수술</a></li>
+                        <li><a href="index.html#promotion" class="hover:text-amber-400 transition-colors">커뮤니티</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 mt-16 pt-8 text-center text-xs text-slate-500">
+                <p>© 2026 Chamzeon Spray & Neuter Clinic. All rights reserved.</p>
+                <p class="mt-2">사업자등록번호: 615-16-96288 | 대표: 문현철</p>
+            </div>
+        </div>
+    </footer>
     <script>lucide.createIcons();</script>
 </body>
 </html>
