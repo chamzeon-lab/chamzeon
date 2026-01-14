@@ -170,10 +170,17 @@
                         <table class="w-full text-left">
                             <thead class="bg-slate-50 border-b border-slate-200">
                                 <tr>
-                                    <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider w-20 text-center">No</th>
-                                    <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">제목</th>
-                                    <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider w-32 text-center">작성자</th>
-                                    <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider w-32 text-center">날짜</th>
+                                    <!-- Hide 'No' on mobile -->
+                                    <th class="hidden md:table-cell px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider w-20 text-center">No</th>
+                                    
+                                    <!-- Title column always visible -->
+                                    <th class="px-4 md:px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">제목</th>
+                                    
+                                    <!-- Hide 'Author' on mobile -->
+                                    <th class="hidden md:table-cell px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider w-32 text-center">작성자</th>
+                                    
+                                    <!-- Date always visible, fixed width on desktop -->
+                                    <th class="px-4 md:px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider w-24 md:w-32 text-center">날짜</th>
                                 </tr>
                             </thead>
                             <tbody id="notice-list" class="divide-y divide-slate-100">
@@ -313,13 +320,6 @@
 
       // --- NOTICE BOARD LOGIC (STATIC DATA FOR GITHUB PAGES) ---
       
-      /* 
-         중요: GitHub Pages는 정적 사이트이므로 데이터베이스가 없습니다.
-         따라서 공지사항을 추가하려면 아래 `notices` 배열에 직접 데이터를 입력하고 
-         코드를 업데이트(commit/push) 해야 합니다.
-         이렇게 하면 모든 방문자가 동일한 내용을 볼 수 있습니다.
-      */
-      
       const notices = [
           { 
               id: 3, 
@@ -356,15 +356,15 @@
               row.onclick = () => openViewModal(notice.id); // 클릭 이벤트 추가
               
               row.innerHTML = `
-                  <td class="px-6 py-4 text-center text-sm text-slate-500 font-medium">${notice.id}</td>
-                  <td class="px-6 py-4">
+                  <td class="hidden md:table-cell px-6 py-4 text-center text-sm text-slate-500 font-medium">${notice.id}</td>
+                  <td class="px-4 md:px-6 py-4">
                       <div class="text-sm font-medium text-slate-900 group-hover:text-amber-600 transition-colors line-clamp-1">
                           ${notice.title}
                           ${isNew(notice.date) ? '<span class="ml-2 inline-block px-1.5 py-0.5 text-[10px] font-bold text-red-600 bg-red-100 rounded">N</span>' : ''}
                       </div>
                   </td>
-                  <td class="px-6 py-4 text-center text-sm text-slate-500">${notice.author}</td>
-                  <td class="px-6 py-4 text-center text-sm text-slate-400 font-light">${notice.date}</td>
+                  <td class="hidden md:table-cell px-6 py-4 text-center text-sm text-slate-500">${notice.author}</td>
+                  <td class="px-4 md:px-6 py-4 text-center text-xs md:text-sm text-slate-400 font-light whitespace-nowrap">${notice.date}</td>
               `;
               noticeList.appendChild(row);
           });
