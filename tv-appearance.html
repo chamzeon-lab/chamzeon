@@ -5,35 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>방송출연 - 참좋은동물병원</title>
     <meta name="description" content="KBS2 2TV 생생정보에 출연한 참좋은동물병원 문현철 원장의 방송 영상입니다." />
-    
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['"Noto Sans KR"', 'sans-serif'],
-              serif: ['"Playfair Display"', 'serif'],
-            },
-            colors: {
-              primary: '#0f172a',
-              secondary: '#b45309',
-            },
-          }
-        }
-      }
-    </script>
-    <style>
-      .group:hover .group-hover\:block { display: block; }
-    </style>
+    <script>tailwind.config = {theme: {extend: {fontFamily: {sans: ['"Noto Sans KR"', 'sans-serif'], serif: ['"Playfair Display"', 'serif']}, colors: {primary: '#0f172a', secondary: '#b45309'}}}};</script>
+    <style>.group:hover .group-hover\:block { display: block; }</style>
 </head>
 <body class="bg-slate-900 text-slate-100 font-sans">
-
-    <!-- Header (Dark Theme Variant) -->
-    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-md shadow-lg border-b border-slate-800 py-3">
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent py-6">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center">
           <div class="flex items-center">
@@ -47,273 +26,56 @@
                </div>
             </a>
           </div>
-
           <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
             <div class="relative group">
-                <button class="text-sm font-medium text-slate-300 hover:text-amber-500 transition-colors flex items-center gap-1 py-4">
-                    병원소개
-                    <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                </button>
-                <div class="absolute left-1/2 -translate-x-1/2 pt-2 w-48 hidden group-hover:block">
-                    <div class="bg-white rounded-lg shadow-xl overflow-hidden border border-slate-100">
-                        <a href="index.html#greetings" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors border-b border-slate-50">인사말</a>
-                        <a href="clinic-hours.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors border-b border-slate-50">진료시간안내</a>
-                        <a href="location.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors">찾아오시는길</a>
-                    </div>
-                </div>
+                <button class="text-sm font-medium text-slate-300 hover:text-amber-500 transition-colors flex items-center gap-1 py-4">병원소개<i data-lucide="chevron-down" class="w-4 h-4"></i></button>
+                <div class="absolute left-1/2 -translate-x-1/2 pt-2 w-48 hidden group-hover:block"><div class="bg-white rounded-lg shadow-xl overflow-hidden border border-slate-100"><a href="index.html#greetings" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 border-b border-slate-50">인사말</a><a href="clinic-hours.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 border-b border-slate-50">진료시간안내</a><a href="location.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600">찾아오시는길</a></div></div>
             </div>
-
             <a href="pricing.html" class="text-sm font-medium text-slate-300 hover:text-amber-500 transition-colors">진료비안내</a>
-            
             <div class="relative group">
-                <button class="text-sm font-medium text-slate-300 hover:text-amber-500 transition-colors flex items-center gap-1 py-4">
-                    중성화수술
-                    <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                </button>
-                <div class="absolute left-1/2 -translate-x-1/2 pt-2 w-48 hidden group-hover:block">
-                    <div class="bg-white rounded-lg shadow-xl overflow-hidden border border-slate-100">
-                        <a href="neutering-process.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors border-b border-slate-50">중성화 수술 과정</a>
-                        <a href="neutering-micro-incision.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors border-b border-slate-50">초미세 절개</a>
-                        <a href="neutering-cost.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors border-b border-slate-50">합리적인 비용</a>
-                        <a href="neutering-care.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors border-b border-slate-50">수술 후 회복 관리</a>
-                        <a href="neutering-photos.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors border-b border-slate-50">수술 후 사진</a>
-                        <a href="neutering-reviews.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors">수술 후기</a>
-                    </div>
-                </div>
+                <button class="text-sm font-medium text-slate-300 hover:text-amber-500 transition-colors flex items-center gap-1 py-4">중성화수술<i data-lucide="chevron-down" class="w-4 h-4"></i></button>
+                <div class="absolute left-1/2 -translate-x-1/2 pt-2 w-48 hidden group-hover:block"><div class="bg-white rounded-lg shadow-xl overflow-hidden border border-slate-100"><a href="neutering-process.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 border-b border-slate-50">중성화 수술 과정</a><a href="neutering-micro-incision.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 border-b border-slate-50">초미세 절개</a><a href="neutering-cost.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 border-b border-slate-50">합리적인 비용</a><a href="neutering-care.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 border-b border-slate-50">수술 후 회복 관리</a><a href="neutering-photos.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 border-b border-slate-50">수술 후 사진</a><a href="neutering-reviews.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600">수술 후기</a></div></div>
             </div>
-
             <a href="stemcell.html" class="text-sm font-medium text-slate-300 hover:text-amber-500 transition-colors">줄기세포/엑소좀 치료(준비중)</a>
-            
             <div class="relative group">
-                <button class="text-sm font-bold text-amber-500 transition-colors flex items-center gap-1 py-4">
-                    커뮤니티
-                    <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                </button>
-                <div class="absolute left-1/2 -translate-x-1/2 pt-2 w-48 hidden group-hover:block">
-                    <div class="bg-white rounded-lg shadow-xl overflow-hidden border border-slate-100">
-                        <a href="notice.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors border-b border-slate-50">공지사항</a>
-                        <a href="tv-appearance.html" class="block px-4 py-3 text-sm font-bold bg-amber-50 text-amber-700">방송출연</a>
-                    </div>
-                </div>
+                <button class="text-sm font-bold text-amber-500 transition-colors flex items-center gap-1 py-4">커뮤니티<i data-lucide="chevron-down" class="w-4 h-4"></i></button>
+                <div class="absolute left-1/2 -translate-x-1/2 pt-2 w-48 hidden group-hover:block"><div class="bg-white rounded-lg shadow-xl overflow-hidden border border-slate-100"><a href="notice.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 border-b border-slate-50">공지사항</a><a href="tv-appearance.html" class="block px-4 py-3 text-sm font-bold bg-amber-50 text-amber-700">방송출연</a></div></div>
             </div>
           </nav>
-
-          <button id="mobile-menu-btn" class="md:hidden p-2 text-white">
-            <i data-lucide="menu" class="w-6 h-6"></i>
-          </button>
+          <button id="mobile-menu-btn" class="md:hidden p-2 text-white"><i data-lucide="menu" class="w-6 h-6"></i></button>
         </div>
       </div>
-
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-lg md:hidden border-t max-h-[80vh] overflow-y-auto text-slate-900">
-          <div class="flex flex-col py-4">
-            <div>
-                <button id="mobile-about-btn" class="w-full flex justify-between items-center px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">
-                    병원소개
-                    <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" id="mobile-about-icon"></i>
-                </button>
-                <div id="mobile-about-menu" class="hidden bg-slate-50 border-y border-slate-100">
-                    <a href="index.html#greetings" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">인사말</a>
-                    <a href="clinic-hours.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">진료시간안내</a>
-                    <a href="location.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">찾아오시는길</a>
-                </div>
-            </div>
-            <a href="pricing.html" class="mobile-link px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">진료비안내</a>
-            <div>
-                <button id="mobile-neutering-btn" class="w-full flex justify-between items-center px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">
-                    중성화수술
-                    <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" id="mobile-neutering-icon"></i>
-                </button>
-                <div id="mobile-neutering-menu" class="hidden bg-slate-50 border-y border-slate-100">
-                    <a href="neutering-process.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">중성화 수술 과정</a>
-                    <a href="neutering-micro-incision.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">초미세 절개 중성화 수술</a>
-                    <a href="neutering-cost.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">합리적인 수술 비용</a>
-                    <a href="neutering-care.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">수술 후 회복 관리</a>
-                    <a href="neutering-photos.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">중성화 수술 후 사진</a>
-                    <a href="neutering-reviews.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">중성화 수술 후기</a>
-                </div>
-            </div>
-            <a href="stemcell.html" class="mobile-link px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">줄기세포/엑소좀 치료(준비중)</a>
-            <div>
-                <button id="mobile-community-btn" class="w-full flex justify-between items-center px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">
-                    커뮤니티
-                    <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" id="mobile-community-icon"></i>
-                </button>
-                <div id="mobile-community-menu" class="hidden bg-slate-50 border-y border-slate-100">
-                    <a href="notice.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">공지사항</a>
-                    <a href="tv-appearance.html" class="block px-10 py-3 text-sm font-bold text-amber-600">방송출연</a>
-                </div>
-            </div>
-          </div>
-      </div>
+      <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-lg md:hidden border-t max-h-[80vh] overflow-y-auto text-slate-900"><div class="flex flex-col py-4"><a href="index.html" class="mobile-link px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">홈으로</a><a href="tv-appearance.html" class="mobile-link px-6 py-3 text-amber-600 font-bold bg-amber-50">방송출연</a></div></div>
     </header>
 
-    <main class="pt-24 min-h-screen relative overflow-hidden">
-        <!-- Background decorative elements -->
-        <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-            <div class="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-amber-600/10 rounded-full blur-[100px]"></div>
-            <div class="absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] bg-blue-900/20 rounded-full blur-[100px]"></div>
-        </div>
-
-        <section class="py-24 relative z-10">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <span class="text-amber-500 font-bold tracking-widest text-sm uppercase mb-4 block">Media Coverage</span>
-                    <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
-                        방송에 소개된 <span class="text-amber-500 italic">참좋은동물병원</span>
-                    </h2>
-                    <p class="text-slate-400 max-w-2xl mx-auto text-lg">
-                        언론에서도 인정받은 전문성과 따뜻한 진료 철학을 만나보세요.
-                    </p>
-                </div>
-
-                <!-- Main Feature Card -->
-                <div class="bg-slate-800 rounded-3xl overflow-hidden shadow-2xl border border-slate-700">
-                    <div class="grid lg:grid-cols-2">
-                        <!-- Video Section (Link to YouTube) -->
-                        <a href="https://youtu.be/NUA6JxnV3T8?si=0WgGde64pgyYHOhB" target="_blank" rel="noopener noreferrer" class="relative aspect-video lg:aspect-auto bg-slate-900 group block overflow-hidden">
-                            <!-- Thumbnail -->
-                            <img 
-                                src="https://img.youtube.com/vi/NUA6JxnV3T8/maxresdefault.jpg" 
-                                alt="KBS2 2TV 생생정보 방송 영상 썸네일" 
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
-                            />
-                            <!-- Play Button Overlay -->
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <div class="w-20 h-20 bg-amber-600/90 rounded-full flex items-center justify-center pl-1 shadow-lg group-hover:scale-110 transition-transform duration-300 ring-4 ring-white/10 group-hover:ring-amber-500/30">
-                                    <i data-lucide="play" class="w-8 h-8 text-white fill-white ml-1"></i>
-                                </div>
-                            </div>
-                            <!-- Text hint -->
-                            <div class="absolute bottom-6 left-0 right-0 text-center">
-                                <span class="text-white/90 text-sm font-medium bg-black/60 px-4 py-2 rounded-full border border-white/10 backdrop-blur-md flex items-center justify-center gap-2 w-fit mx-auto group-hover:bg-amber-600/90 group-hover:border-amber-500 transition-colors">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                                    클릭하여 유튜브에서 보기
-                                </span>
-                            </div>
-                        </a>
-
-                        <!-- Content Section -->
-                        <div class="p-10 lg:p-16 flex flex-col justify-center relative">
-                            <div class="absolute top-0 right-0 p-10 opacity-10 pointer-events-none">
-                                <i data-lucide="tv" class="w-40 h-40 text-white"></i>
-                            </div>
-
-                            <div class="mb-8">
-                                <div class="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/10 text-amber-400 rounded-full text-sm font-bold border border-amber-500/20 mb-6">
-                                    <span class="w-2 h-2 rounded-full bg-amber-50 animate-pulse"></span>
-                                    KBS2 2TV 생생정보
-                                </div>
-                                <h3 class="text-3xl font-bold text-white mb-2 leading-tight">
-                                    &lt;합장하는 강아지 허불이 & 허굴이&gt; 편
-                                </h3>
-                                <p class="text-slate-400 text-sm font-medium">2025년 4월 15일 방영</p>
-                            </div>
-
-                            <div class="space-y-6 text-slate-300 leading-relaxed border-t border-slate-700 pt-8">
-                                <p>
-                                    밀양 참좋은동물병원의 <strong class="text-white">문현철 원장님</strong>께서 
-                                    KBS2 인기 프로그램 '2TV 생생정보'에 <span class="text-amber-400">건강검진 수의사</span>로 출연하셨습니다.
-                                </p>
-                                <p>
-                                    신기한 장기를 가진 강아지들의 건강 상태를 정밀하게 체크하고, 
-                                    보호자님께 전문적인 조언을 건네는 모습이 방영되었습니다.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
+    <main class="pt-0 min-h-screen relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0"><div class="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-amber-600/10 rounded-full blur-[100px]"></div><div class="absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] bg-blue-900/20 rounded-full blur-[100px]"></div></div>
+        <section class="relative h-72 md:h-80 flex items-center justify-center overflow-hidden z-10"><div class="absolute inset-0 z-0"><video autoplay loop muted playsinline class="w-full h-full object-cover"><source src="bground3.mp4" type="video/mp4"></video><div class="absolute inset-0 bg-slate-900/60"></div></div><div class="relative z-10 text-center px-4 pt-20"><h1 class="text-3xl md:text-5xl font-serif font-bold text-white mb-6">방송출연</h1><nav class="flex justify-center items-center gap-2 text-sm text-slate-300"><a href="index.html" class="hover:text-white transition-colors"><i data-lucide="home" class="w-4 h-4"></i></a><i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i><span>커뮤니티</span><i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i><span class="text-amber-400 font-bold">방송출연</span></nav></div></section>
+        <section class="py-24 relative z-10"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="text-center mb-16"><p class="text-slate-400 max-w-2xl mx-auto text-lg">언론에서도 인정받은 전문성과 따뜻한 진료 철학을 만나보세요.</p></div><div class="bg-slate-800 rounded-3xl overflow-hidden shadow-2xl border border-slate-700"><div class="grid lg:grid-cols-2"><a href="https://youtu.be/NUA6JxnV3T8?si=0WgGde64pgyYHOhB" target="_blank" rel="noopener noreferrer" class="relative aspect-video lg:aspect-auto bg-slate-900 group block overflow-hidden"><img src="https://img.youtube.com/vi/NUA6JxnV3T8/maxresdefault.jpg" alt="KBS2 2TV 생생정보 방송 영상 썸네일" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" /><div class="absolute inset-0 flex items-center justify-center"><div class="w-20 h-20 bg-amber-600/90 rounded-full flex items-center justify-center pl-1 shadow-lg group-hover:scale-110 transition-transform duration-300 ring-4 ring-white/10 group-hover:ring-amber-500/30"><i data-lucide="play" class="w-8 h-8 text-white fill-white ml-1"></i></div></div><div class="absolute bottom-6 left-0 right-0 text-center"><span class="text-white/90 text-sm font-medium bg-black/60 px-4 py-2 rounded-full border border-white/10 backdrop-blur-md flex items-center justify-center gap-2 w-fit mx-auto group-hover:bg-amber-600/90 group-hover:border-amber-500 transition-colors"><i data-lucide="external-link" class="w-4 h-4"></i>클릭하여 유튜브에서 보기</span></div></a><div class="p-10 lg:p-16 flex flex-col justify-center relative"><div class="absolute top-0 right-0 p-10 opacity-10 pointer-events-none"><i data-lucide="tv" class="w-40 h-40 text-white"></i></div><div class="mb-8"><div class="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/10 text-amber-400 rounded-full text-sm font-bold border border-amber-500/20 mb-6"><span class="w-2 h-2 rounded-full bg-amber-50 animate-pulse"></span>KBS2 2TV 생생정보</div><h3 class="text-3xl font-bold text-white mb-2 leading-tight">&lt;합장하는 강아지 허불이 & 허굴이&gt; 편</h3><p class="text-slate-400 text-sm font-medium">2025년 4월 15일 방영</p></div><div class="space-y-6 text-slate-300 leading-relaxed border-t border-slate-700 pt-8"><p>밀양 참좋은동물병원의 <strong class="text-white">문현철 원장님</strong>께서 KBS2 인기 프로그램 '2TV 생생정보'에 <span class="text-amber-400">건강검진 수의사</span>로 출연하셨습니다.</p><p>신기한 장기를 가진 강아지들의 건강 상태를 정밀하게 체크하고, 보호자님께 전문적인 조언을 건네는 모습이 방영되었습니다.</p></div></div></div></div></div></section>
     </main>
-
-    <!-- Footer -->
-    <footer id="contact" class="bg-slate-900 text-slate-300 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                <div>
-                    <h3 class="text-2xl font-serif font-bold text-white mb-6">참좋은동물병원</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">참좋은동물병원은 생명을 존중하는 마음으로 최상의 진료 서비스를 제공합니다.</p>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Contact Us</h4>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="map-pin" class="text-amber-500 mt-1 flex-shrink-0 w-4 h-4"></i>
-                            <span class="text-sm">경남 밀양시 밀양대로 1896 1층<br/>참좋은동물병원</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="phone" class="text-amber-500 flex-shrink-0 w-4 h-4"></i>
-                            <span class="text-sm">055-351-3581</span>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Hours</h4>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="clock" class="text-amber-500 mt-1 flex-shrink-0 w-4 h-4"></i>
-                            <div class="text-sm">
-                                <strong class="text-amber-500 block mb-1">일요일, 공휴일 휴무</strong>
-                                <span class="block mb-2"></span>
-                                <strong class="text-white block mb-1">진료시간</strong>
-                                <span class="block">월 ~ 금 : 오전 10:00 - 오후 06:00</span>
-                                <span class="block">토요일 : 오전 10:00 - 오후 03:00</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Quick Menu</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="index.html#greetings" class="hover:text-amber-400 transition-colors">인사말</a></li>
-                        <li><a href="pricing.html" class="hover:text-amber-400 transition-colors">진료비안내</a></li>
-                        <li><a href="index.html#neutering" class="hover:text-amber-400 transition-colors">중성화수술</a></li>
-                        <li><a href="notice.html" class="hover:text-amber-400 transition-colors">공지사항</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-slate-800 mt-16 pt-8 text-center text-xs text-slate-500">
-                <p>© 2026 Chamzeon Spray & Neuter Clinic. All rights reserved.</p>
-                <p class="mt-2">사업자등록번호: 615-16-96288 | 대표: 문현철</p>
-            </div>
-        </div>
-    </footer>
-
+    
+    <footer id="contact" class="bg-slate-900 text-slate-300 border-t border-slate-800"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12"><div><h3 class="text-2xl font-serif font-bold text-white mb-6">참좋은동물병원</h3><p class="text-slate-400 text-sm">참좋은동물병원은 생명을 존중하는 마음으로 최상의 진료 서비스를 제공합니다.</p></div></div><div class="border-t border-slate-800 mt-16 pt-8 text-center text-xs text-slate-500"><p>© 2026 Chamzeon Spray & Neuter Clinic. All rights reserved.</p></div></div></footer>
     <script>
       lucide.createIcons();
-
-      // Mobile Menu Toggle
       const mobileMenuBtn = document.getElementById('mobile-menu-btn');
       const mobileMenu = document.getElementById('mobile-menu');
       let isMobileMenuOpen = false;
+      mobileMenuBtn.addEventListener('click', () => { isMobileMenuOpen = !isMobileMenuOpen; mobileMenu.classList.toggle('hidden', !isMobileMenuOpen); });
+      const setupSubmenu = (btnId, menuId, iconId) => { const btn = document.getElementById(btnId); const menu = document.getElementById(menuId); const icon = document.getElementById(iconId); if(btn) { btn.addEventListener('click', () => { menu.classList.toggle('hidden'); icon.classList.toggle('rotate-180'); }); } };
+      setupSubmenu('mobile-about-btn', 'mobile-about-menu', 'mobile-about-icon'); setupSubmenu('mobile-neutering-btn', 'mobile-neutering-menu', 'mobile-neutering-icon'); setupSubmenu('mobile-community-btn', 'mobile-community-menu', 'mobile-community-icon');
 
-      mobileMenuBtn.addEventListener('click', () => {
-        isMobileMenuOpen = !isMobileMenuOpen;
-        if (isMobileMenuOpen) {
-           mobileMenu.classList.remove('hidden');
+      // Scroll Header Logic for Dark Theme Page
+      const header = document.getElementById('main-header');
+      window.addEventListener('scroll', () => {
+        const isScrolled = window.scrollY > 50;
+        if (isScrolled) {
+            header.classList.remove('bg-transparent', 'py-6');
+            header.classList.add('bg-slate-900/95', 'backdrop-blur-md', 'shadow-lg', 'border-b', 'border-slate-800', 'py-3');
         } else {
-           mobileMenu.classList.add('hidden');
+            header.classList.add('bg-transparent', 'py-6');
+            header.classList.remove('bg-slate-900/95', 'backdrop-blur-md', 'shadow-lg', 'border-b', 'border-slate-800', 'py-3');
         }
       });
-
-      // Mobile Submenus
-      const setupSubmenu = (btnId, menuId, iconId) => {
-          const btn = document.getElementById(btnId);
-          const menu = document.getElementById(menuId);
-          const icon = document.getElementById(iconId);
-          if(btn) {
-              btn.addEventListener('click', () => {
-                  menu.classList.toggle('hidden');
-                  icon.classList.toggle('rotate-180');
-              });
-          }
-      };
-
-      setupSubmenu('mobile-about-btn', 'mobile-about-menu', 'mobile-about-icon');
-      setupSubmenu('mobile-neutering-btn', 'mobile-neutering-menu', 'mobile-neutering-icon');
-      setupSubmenu('mobile-community-btn', 'mobile-community-menu', 'mobile-community-icon');
     </script>
 </body>
 </html>
