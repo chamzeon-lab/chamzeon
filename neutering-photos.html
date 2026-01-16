@@ -38,7 +38,62 @@
 
     <main class="pt-0 min-h-screen">
         <section class="relative h-72 md:h-80 flex items-center justify-center overflow-hidden"><div class="absolute inset-0 z-0"><video autoplay loop muted playsinline class="w-full h-full object-cover"><source src="bground3.mp4" type="video/mp4"></video><div class="absolute inset-0 bg-slate-900/60"></div></div><div class="relative z-10 text-center px-4 pt-20"><h1 class="text-3xl md:text-5xl font-serif font-bold text-white mb-6">수술 후 사진</h1><nav class="flex justify-center items-center gap-2 text-sm text-slate-300"><a href="index.html" class="hover:text-white transition-colors"><i data-lucide="home" class="w-4 h-4"></i></a><i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i><span>중성화수술</span><i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i><span class="text-amber-400 font-bold">수술 후 사진</span></nav></div></section>
-        <section class="py-24 bg-white"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="text-center mb-16"><span class="text-amber-600 font-bold tracking-widest text-sm uppercase mb-3 block">Cases</span><h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">중성화 <span class="text-amber-700">수술 후 사진</span></h2><p class="text-slate-600 max-w-2xl mx-auto">최소 절개로 흉터가 거의 남지 않는 깔끔한 수술 결과를 확인하세요.</p></div><div class="grid grid-cols-2 md:grid-cols-4 gap-6"><div class="relative group overflow-hidden rounded-2xl aspect-square bg-slate-100 shadow-sm border border-slate-200"><img src="case01.jpg" alt="수술 사례 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"><div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4 text-center"><span class="text-amber-400 text-[10px] font-bold uppercase mb-1">Case 01</span><p class="text-sm font-bold">암컷 코리안숏헤어 (2.4kg)</p><p class="text-[10px] text-slate-300 mt-1">절개 크기: 약 0.9cm</p></div></div><div class="relative group overflow-hidden rounded-2xl aspect-square bg-slate-100 shadow-sm border border-slate-200"><img src="case02.jpg" alt="수술 사례 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"><div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4 text-center"><span class="text-amber-400 text-[10px] font-bold uppercase mb-1">Case 02</span><p class="text-sm font-bold">1</p><p class="text-[10px] text-slate-300 mt-1">2</p></div></div><div class="relative group overflow-hidden rounded-2xl aspect-square bg-slate-100 shadow-sm border border-slate-200"><img src="case03.jpg" alt="수술 사례 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"><div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4 text-center"><span class="text-amber-400 text-[10px] font-bold uppercase mb-1">Case 03</span><p class="text-sm font-bold">1</p><p class="text-[10px] text-slate-300 mt-1">2</p></div></div><div class="relative group overflow-hidden rounded-2xl aspect-square bg-slate-100 shadow-sm border border-slate-200"><img src="case04.jpg" alt="수술 사례 4" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"><div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4 text-center"><span class="text-amber-400 text-[10px] font-bold uppercase mb-1">Case 04</span><p class="text-sm font-bold">1</p><p class="text-[10px] text-slate-300 mt-1">2</p></div></div></div></div></section>
+        <section class="py-24 bg-white"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="text-center mb-16"><span class="text-amber-600 font-bold tracking-widest text-sm uppercase mb-3 block">Cases</span><h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">중성화 <span class="text-amber-700">수술 후 사진</span></h2><p class="text-slate-600 max-w-2xl mx-auto">사진을 클릭하시면 수술 부위를 자세히 확인하실 수 있습니다.</p></div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <!-- Case 01 -->
+            <div class="photo-card relative group overflow-hidden rounded-2xl aspect-square bg-slate-100 shadow-sm border border-slate-200 cursor-pointer">
+                <img src="case01.jpg" alt="수술 사례 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4 text-center pointer-events-none">
+                    <span class="text-amber-400 text-[10px] font-bold uppercase mb-1">Case 01</span>
+                    <p class="text-sm font-bold">암컷 코리안숏헤어 (2.4kg)</p>
+                    <p class="text-[10px] text-slate-300 mt-1">절개 크기: 약 0.9cm</p>
+                    <div class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity delay-100">
+                        <span class="inline-flex items-center gap-1 text-[10px] bg-white/20 px-2 py-1 rounded-full"><i data-lucide="maximize-2" class="w-3 h-3"></i> 크게 보기</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case 02 -->
+            <div class="photo-card relative group overflow-hidden rounded-2xl aspect-square bg-slate-100 shadow-sm border border-slate-200 cursor-pointer">
+                <img src="case02.jpg" alt="수술 사례 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4 text-center pointer-events-none">
+                    <span class="text-amber-400 text-[10px] font-bold uppercase mb-1">Case 02</span>
+                    <p class="text-sm font-bold">1</p>
+                    <p class="text-[10px] text-slate-300 mt-1">2</p>
+                    <div class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity delay-100">
+                        <span class="inline-flex items-center gap-1 text-[10px] bg-white/20 px-2 py-1 rounded-full"><i data-lucide="maximize-2" class="w-3 h-3"></i> 크게 보기</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case 03 -->
+            <div class="photo-card relative group overflow-hidden rounded-2xl aspect-square bg-slate-100 shadow-sm border border-slate-200 cursor-pointer">
+                <img src="case03.jpg" alt="수술 사례 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4 text-center pointer-events-none">
+                    <span class="text-amber-400 text-[10px] font-bold uppercase mb-1">Case 03</span>
+                    <p class="text-sm font-bold">1</p>
+                    <p class="text-[10px] text-slate-300 mt-1">2</p>
+                    <div class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity delay-100">
+                        <span class="inline-flex items-center gap-1 text-[10px] bg-white/20 px-2 py-1 rounded-full"><i data-lucide="maximize-2" class="w-3 h-3"></i> 크게 보기</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case 04 -->
+            <div class="photo-card relative group overflow-hidden rounded-2xl aspect-square bg-slate-100 shadow-sm border border-slate-200 cursor-pointer">
+                <img src="case04.jpg" alt="수술 사례 4" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4 text-center pointer-events-none">
+                    <span class="text-amber-400 text-[10px] font-bold uppercase mb-1">Case 04</span>
+                    <p class="text-sm font-bold">1</p>
+                    <p class="text-[10px] text-slate-300 mt-1">2</p>
+                    <div class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity delay-100">
+                        <span class="inline-flex items-center gap-1 text-[10px] bg-white/20 px-2 py-1 rounded-full"><i data-lucide="maximize-2" class="w-3 h-3"></i> 크게 보기</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div></section>
     </main>
     
     <footer id="contact" class="bg-slate-900 text-slate-300">
@@ -53,6 +108,20 @@
             <div class="border-t border-slate-800 mt-16 pt-8 text-center text-xs text-slate-500"><p>© 2026 Chamzeon Spay & Neuter Clinic. All rights reserved.</p><p class="mt-2">사업자등록번호: 615-16-96288 | 대표: 문현철</p></div>
         </div>
     </footer>
+
+    <!-- Image Modal -->
+    <div id="image-modal" class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 md:p-8 opacity-0 transition-opacity duration-300">
+        <button id="close-modal" class="absolute top-4 right-4 text-white/70 hover:text-white transition-colors p-2 z-50">
+            <i data-lucide="x" class="w-10 h-10"></i>
+        </button>
+        <div class="relative w-full h-full flex items-center justify-center" id="modal-content">
+            <img id="modal-image" src="" alt="확대 이미지" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl scale-95 transition-transform duration-300">
+            <div id="modal-caption" class="absolute bottom-4 left-0 right-0 text-center text-white/90 bg-black/50 p-4 backdrop-blur-md rounded-xl max-w-lg mx-auto transform translate-y-4 opacity-0 transition-all duration-300">
+                <!-- Caption populated by JS -->
+            </div>
+        </div>
+    </div>
+
     <script>
       lucide.createIcons();
       const header = document.getElementById('main-header');
@@ -92,6 +161,67 @@
       mobileMenuBtn.addEventListener('click', () => { isMobileMenuOpen = !isMobileMenuOpen; mobileMenu.classList.toggle('hidden', !isMobileMenuOpen); });
       const setupSubmenu = (btnId, menuId, iconId) => { const btn = document.getElementById(btnId); const menu = document.getElementById(menuId); const icon = document.getElementById(iconId); if(btn) { btn.addEventListener('click', () => { menu.classList.toggle('hidden'); icon.classList.toggle('rotate-180'); }); } };
       setupSubmenu('mobile-about-btn', 'mobile-about-menu', 'mobile-about-icon'); setupSubmenu('mobile-neutering-btn', 'mobile-neutering-menu', 'mobile-neutering-icon'); setupSubmenu('mobile-community-btn', 'mobile-community-menu', 'mobile-community-icon');
+
+      // Modal Logic
+      const modal = document.getElementById('image-modal');
+      const modalImg = document.getElementById('modal-image');
+      const closeModalBtn = document.getElementById('close-modal');
+      const photoCards = document.querySelectorAll('.photo-card');
+      const modalCaption = document.getElementById('modal-caption');
+
+      function openModal(imgSrc, captionHtml) {
+          modalImg.src = imgSrc;
+          // Set caption if needed
+          /*
+          if(captionHtml) {
+              modalCaption.innerHTML = captionHtml;
+              modalCaption.classList.remove('translate-y-4', 'opacity-0');
+          }
+          */
+          
+          modal.classList.remove('hidden');
+          // Add small delay for transition
+          setTimeout(() => {
+              modal.classList.remove('opacity-0');
+              modalImg.classList.remove('scale-95');
+              modalImg.classList.add('scale-100');
+          }, 10);
+          document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+          modal.classList.add('opacity-0');
+          modalImg.classList.remove('scale-100');
+          modalImg.classList.add('scale-95');
+          // Wait for transition to finish before hiding
+          setTimeout(() => {
+            modal.classList.add('hidden');
+            modalImg.src = '';
+          }, 300);
+          document.body.style.overflow = '';
+      }
+
+      photoCards.forEach(card => {
+          card.addEventListener('click', () => {
+              const img = card.querySelector('img');
+              if (img) {
+                  openModal(img.src);
+              }
+          });
+      });
+
+      closeModalBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => {
+          if (e.target === modal || e.target.id === 'modal-content') {
+              closeModal();
+          }
+      });
+      // Close on ESC key
+      document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+              closeModal();
+          }
+      });
     </script>
 </body>
 </html>
