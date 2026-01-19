@@ -13,27 +13,39 @@
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans">
     <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent py-6">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center"><a href="index.html" class="flex items-center gap-2 group"><div id="logo-circle" class="w-10 h-10 rounded-full flex items-center justify-center border-2 transition-colors border-white text-white"><span class="font-serif font-bold text-xl">C</span></div><div class="flex flex-col"><span id="logo-text" class="text-xl font-bold tracking-tight transition-colors text-white">참좋은</span><span id="logo-sub" class="text-xs tracking-widest transition-colors text-slate-200">SPAY AND NEUTER CLINIC</span></div></a></div>
-                <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
-                    <div class="relative group"><button class="nav-item text-sm font-medium text-white hover:text-amber-500 transition-colors flex items-center gap-1 py-4">병원소개<i data-lucide="chevron-down" class="w-4 h-4"></i></button>
-                        <div class="absolute left-1/2 -translate-x-1/2 pt-2 w-48 hidden group-hover:block"><div class="bg-white rounded-lg shadow-xl overflow-hidden border border-slate-100"><a href="index.html#greetings" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 border-b border-slate-50">인사말</a><a href="clinic-hours.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 border-b border-slate-50">진료시간안내</a><a href="location.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600">찾아오시는길</a></div></div>
-                    </div>
-                    <a href="pricing.html" class="nav-item text-sm font-medium text-white hover:text-amber-500 transition-colors">진료비안내</a>
-                    <div class="relative group"><button class="nav-item text-sm font-medium text-white hover:text-amber-500 transition-colors flex items-center gap-1 py-4">중성화수술<i data-lucide="chevron-down" class="w-4 h-4"></i></button>
-                        <div class="absolute left-1/2 -translate-x-1/2 pt-2 w-48 hidden group-hover:block"><div class="bg-white rounded-lg shadow-xl overflow-hidden border border-slate-100"><a href="neutering-process.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 border-b border-slate-50">중성화 수술 과정</a><a href="neutering-micro-incision.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 border-b border-slate-50">초미세 절개</a><a href="neutering-cost.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 border-b border-slate-50">합리적인 비용</a><a href="neutering-care.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 border-b border-slate-50">수술 후 회복 관리</a><a href="neutering-photos.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600">수술 후 사진</a></div></div>
-                    </div>
-                    <a href="stemcell.html" class="nav-item text-sm font-bold text-amber-500 transition-colors">줄기세포/엑소좀 치료(준비중)</a>
-                    <div class="relative group"><button class="nav-item text-sm font-medium text-white hover:text-amber-500 transition-colors flex items-center gap-1 py-4">커뮤니티<i data-lucide="chevron-down" class="w-4 h-4"></i></button>
-                        <div class="absolute left-1/2 -translate-x-1/2 pt-2 w-48 hidden group-hover:block"><div class="bg-white rounded-lg shadow-xl overflow-hidden border border-slate-100"><a href="notice.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 border-b border-slate-50">공지사항</a><a href="tv-appearance.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600">방송출연</a></div></div>
-                    </div>
-                </nav>
-                <button id="mobile-menu-btn" class="md:hidden p-2 text-white"><i data-lucide="menu" class="w-6 h-6"></i></button>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+               <div id="logo-circle" class="w-10 h-10 rounded-full flex items-center justify-center border-2 transition-colors border-white text-white"><span class="font-serif font-bold text-xl">C</span></div>
+               <div class="flex flex-col"><span id="logo-text" class="text-xl font-bold tracking-tight transition-colors text-white">참좋은</span><span id="logo-sub" class="text-xs tracking-widest transition-colors text-slate-200">SPAY AND NEUTER CLINIC</span></div>
+            </a>
+          </div>
+          <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
+            <div class="relative group"><button class="nav-link text-sm font-medium hover:text-amber-500 transition-colors text-white/90 flex items-center gap-1 py-4">병원소개<i data-lucide="chevron-down" class="w-4 h-4"></i></button>
+                <div class="absolute left-1/2 -translate-x-1/2 pt-2 w-48 hidden group-hover:block"><div class="bg-white rounded-lg shadow-xl overflow-hidden border border-slate-100"><a href="index.html#greetings" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors border-b border-slate-50">인사말</a><a href="clinic-hours.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors border-b border-slate-50">진료시간안내</a><a href="location.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors">찾아오시는길</a></div></div>
             </div>
+            <a href="pricing.html" class="nav-link text-sm font-medium hover:text-amber-500 transition-colors text-white/90">진료비안내</a>
+            <div class="relative group"><button class="nav-link text-sm font-medium hover:text-amber-500 transition-colors text-white/90 flex items-center gap-1 py-4">중성화수술<i data-lucide="chevron-down" class="w-4 h-4"></i></button>
+                <div class="absolute left-1/2 -translate-x-1/2 pt-2 w-48 hidden group-hover:block"><div class="bg-white rounded-lg shadow-xl overflow-hidden border border-slate-100"><a href="neutering-process.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors border-b border-slate-50">중성화 수술 과정</a><a href="neutering-micro-incision.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors border-b border-slate-50">초미세 절개</a><a href="neutering-cost.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors border-b border-slate-50">합리적인 비용</a><a href="neutering-care.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors border-b border-slate-50">수술 후 회복 관리</a><a href="neutering-photos.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors">수술 후 사진</a></div></div>
+            </div>
+            <a href="stemcell.html" class="nav-link text-sm font-medium hover:text-amber-500 transition-colors text-white/90">줄기세포/엑소좀 치료(준비중)</a>
+            <div class="relative group"><button class="nav-link text-sm font-medium hover:text-amber-500 transition-colors text-white/90 flex items-center gap-1 py-4">커뮤니티<i data-lucide="chevron-down" class="w-4 h-4"></i></button>
+                <div class="absolute left-1/2 -translate-x-1/2 pt-2 w-48 hidden group-hover:block"><div class="bg-white rounded-lg shadow-xl overflow-hidden border border-slate-100"><a href="notice.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors border-b border-slate-50">공지사항</a><a href="tv-appearance.html" class="block px-4 py-3 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors">방송출연</a></div></div>
+            </div>
+          </nav>
+          <button id="mobile-menu-btn" class="md:hidden p-2 text-white"><i data-lucide="menu" class="w-6 h-6"></i></button>
         </div>
-        <!-- Mobile Menu Omitted -->
-        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-lg md:hidden border-t max-h-[80vh] overflow-y-auto"><div class="flex flex-col py-4"><a href="index.html" class="mobile-link px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">홈으로</a><a href="stemcell.html" class="mobile-link px-6 py-3 text-amber-600 font-bold bg-amber-50">줄기세포/엑소좀 치료</a></div></div>
+      </div>
+      <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-lg md:hidden border-t max-h-[80vh] overflow-y-auto">
+          <div class="flex flex-col py-4">
+            <div><button id="mobile-about-btn" class="w-full flex justify-between items-center px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">병원소개<i data-lucide="chevron-down" class="w-4 h-4 transition-transform" id="mobile-about-icon"></i></button><div id="mobile-about-menu" class="hidden bg-slate-50 border-y border-slate-100"><a href="index.html#greetings" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">인사말</a><a href="clinic-hours.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">진료시간안내</a><a href="location.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">찾아오시는길</a></div></div>
+            <a href="pricing.html" class="mobile-link px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">진료비안내</a>
+            <div><button id="mobile-neutering-btn" class="w-full flex justify-between items-center px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">중성화수술<i data-lucide="chevron-down" class="w-4 h-4 transition-transform" id="mobile-neutering-icon"></i></button><div id="mobile-neutering-menu" class="hidden bg-slate-50 border-y border-slate-100"><a href="neutering-process.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">중성화 수술 과정</a><a href="neutering-micro-incision.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">초미세 절개 중성화 수술</a><a href="neutering-cost.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">합리적인 수술 비용</a><a href="neutering-care.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">수술 후 회복 관리</a><a href="neutering-photos.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">중성화 수술 후 사진</a></div></div>
+            <a href="stemcell.html" class="mobile-link px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">줄기세포/엑소좀 치료(준비중)</a>
+            <div><button id="mobile-community-btn" class="w-full flex justify-between items-center px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">커뮤니티<i data-lucide="chevron-down" class="w-4 h-4 transition-transform" id="mobile-community-icon"></i></button><div id="mobile-community-menu" class="hidden bg-slate-50 border-y border-slate-100"><a href="notice.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">공지사항</a><a href="tv-appearance.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">방송출연</a></div></div>
+          </div>
+      </div>
     </header>
 
     <main class="pt-0 min-h-screen">
@@ -111,7 +123,7 @@
       const logoCircle = document.getElementById('logo-circle');
       const logoText = document.getElementById('logo-text');
       const logoSub = document.getElementById('logo-sub');
-      const navItems = document.querySelectorAll('.nav-item');
+      const navItems = document.querySelectorAll('.nav-link');
       const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 
       window.addEventListener('scroll', () => {
@@ -122,26 +134,24 @@
             logoCircle.classList.remove('border-white', 'text-white'); logoCircle.classList.add('border-slate-900', 'text-slate-900');
             logoText.classList.remove('text-white'); logoText.classList.add('text-slate-900');
             logoSub.classList.remove('text-slate-200'); logoSub.classList.add('text-slate-600');
-            navItems.forEach(item => {
-                if (item.classList.contains('text-amber-500')) { item.classList.remove('text-amber-500'); item.classList.add('text-amber-600'); }
-                else { item.classList.remove('text-white'); item.classList.add('text-slate-800'); }
-            });
             mobileMenuBtn.classList.remove('text-white'); mobileMenuBtn.classList.add('text-slate-900');
+            navItems.forEach(item => {
+                item.classList.remove('text-white/90'); item.classList.add('text-slate-800');
+            });
         } else {
             header.classList.add('bg-transparent', 'py-6'); header.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-md', 'py-3');
             logoCircle.classList.add('border-white', 'text-white'); logoCircle.classList.remove('border-slate-900', 'text-slate-900');
             logoText.classList.add('text-white'); logoText.classList.remove('text-slate-900');
             logoSub.classList.add('text-slate-200'); logoSub.classList.remove('text-slate-600');
-            navItems.forEach(item => {
-                if (item.classList.contains('text-amber-600')) { item.classList.remove('text-amber-600'); item.classList.add('text-amber-500'); }
-                else { item.classList.add('text-white'); item.classList.remove('text-slate-800'); }
-            });
             mobileMenuBtn.classList.add('text-white'); mobileMenuBtn.classList.remove('text-slate-900');
+            navItems.forEach(item => {
+                item.classList.add('text-white/90'); item.classList.remove('text-slate-800');
+            });
         }
       });
       const mobileMenu = document.getElementById('mobile-menu');
       let isMobileMenuOpen = false;
-      mobileMenuBtn.addEventListener('click', () => { isMobileMenuOpen = !isMobileMenuOpen; mobileMenu.classList.toggle('hidden', !isMobileMenuOpen); });
+      mobileMenuBtn.addEventListener('click', () => { isMobileMenuOpen = !isMobileMenuOpen; if (isMobileMenuOpen) { mobileMenu.classList.remove('hidden'); } else { mobileMenu.classList.add('hidden'); } });
       const setupSubmenu = (btnId, menuId, iconId) => { const btn = document.getElementById(btnId); const menu = document.getElementById(menuId); const icon = document.getElementById(iconId); if(btn) { btn.addEventListener('click', () => { menu.classList.toggle('hidden'); icon.classList.toggle('rotate-180'); }); } };
       setupSubmenu('mobile-about-btn', 'mobile-about-menu', 'mobile-about-icon'); setupSubmenu('mobile-neutering-btn', 'mobile-neutering-menu', 'mobile-neutering-icon'); setupSubmenu('mobile-community-btn', 'mobile-community-menu', 'mobile-community-icon');
     </script>
