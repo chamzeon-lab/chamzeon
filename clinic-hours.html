@@ -51,4 +51,143 @@
 
     <main class="pt-0 min-h-screen">
         <section class="relative h-72 md:h-80 flex items-center justify-center overflow-hidden"><div class="absolute inset-0 z-0"><video autoplay loop muted playsinline class="w-full h-full object-cover"><source src="bground3.mp4" type="video/mp4"></video><div class="absolute inset-0 bg-slate-900/60"></div></div><div class="relative z-10 text-center px-4 pt-20"><h1 class="text-3xl md:text-5xl font-serif font-bold text-white mb-6">진료시간 안내</h1><nav class="flex justify-center items-center gap-2 text-sm text-slate-300"><a href="index.html" class="hover:text-white transition-colors"><i data-lucide="home" class="w-4 h-4"></i></a><i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i><span>병원소개</span><i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i><span class="text-amber-400 font-bold">진료시간안내</span></nav></div></section>
-        <section class="py-24 bg-white"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="text-center mb-16"><span class="text-amber-600 font-bold tracking-widest text-sm uppercase mb-3 block">Clinic Hours</span><h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">진료시간 안내</h2><p class="text-slate-600">편안한 진료를 위해 방문 전 진료 시간을 확인해 주세요.</p></div><div class="grid lg:grid-cols-2 gap-10 max-w-5xl mx-auto"><div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden"><div class="bg-slate-900 p-8 text-white flex items-center justify-between"><h3 class="text-2xl font-serif font-bold">Time Table</h3><i data-lucide="clock" class="w-8 h-8 text-amber-500"></i></div><div class="p-8 md:p-12"><ul
+        <section class="py-24 bg-white"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16"><span class="text-amber-600 font-bold tracking-widest text-sm uppercase mb-3 block">Clinic Hours</span><h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">진료시간 안내</h2><p class="text-slate-600">편안한 진료를 위해 방문 전 진료 시간을 확인해 주세요.</p></div>
+            
+            <div class="grid lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
+                <!-- Left: Time Table -->
+                <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden h-fit">
+                    <div class="bg-slate-900 p-8 text-white flex items-center justify-between">
+                        <h3 class="text-2xl font-serif font-bold">Time Table</h3>
+                        <i data-lucide="clock" class="w-8 h-8 text-amber-500"></i>
+                    </div>
+                    <div class="p-8 md:p-12">
+                        <ul class="space-y-8">
+                            <li class="flex flex-col md:flex-row md:items-center justify-between border-b border-slate-100 pb-6 last:border-0 last:pb-0">
+                                <div class="flex items-center gap-3 mb-2 md:mb-0">
+                                    <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                                    <span class="font-bold text-slate-900 text-lg">평일 <span class="text-sm font-normal text-slate-400 ml-1">Mon - Fri</span></span>
+                                </div>
+                                <span class="text-slate-600 font-medium text-lg">오전 10:00 ~ 오후 06:00</span>
+                            </li>
+                            <li class="flex flex-col md:flex-row md:items-center justify-between border-b border-slate-100 pb-6 last:border-0 last:pb-0">
+                                <div class="flex items-center gap-3 mb-2 md:mb-0">
+                                    <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                                    <span class="font-bold text-slate-900 text-lg">토요일 <span class="text-sm font-normal text-slate-400 ml-1">Saturday</span></span>
+                                </div>
+                                <span class="text-slate-600 font-medium text-lg">오전 10:00 ~ 오후 03:00</span>
+                            </li>
+                            <li class="flex flex-col md:flex-row md:items-center justify-between border-b border-slate-100 pb-6 last:border-0 last:pb-0">
+                                <div class="flex items-center gap-3 mb-2 md:mb-0">
+                                    <span class="w-2 h-2 rounded-full bg-red-500"></span>
+                                    <span class="font-bold text-slate-900 text-lg">휴무 <span class="text-sm font-normal text-slate-400 ml-1">Sun / Holiday</span></span>
+                                </div>
+                                <span class="text-red-500 font-bold text-lg">일요일, 공휴일 휴진</span>
+                            </li>
+                            <li class="pt-2">
+                                <div class="bg-amber-50 rounded-xl p-4 flex items-center justify-center gap-2 text-amber-800 font-bold">
+                                    <i data-lucide="utensils" class="w-5 h-5"></i>
+                                    점심시간 없이 진료합니다.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right: Info -->
+                <div class="space-y-8">
+                    <!-- Reservation Note -->
+                    <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200">
+                        <div class="flex items-center gap-3 mb-4">
+                            <i data-lucide="alert-circle" class="w-6 h-6 text-amber-600"></i>
+                            <h3 class="text-xl font-bold text-slate-900">예약시 주의사항</h3>
+                        </div>
+                        <ul class="space-y-3 text-slate-600 text-sm leading-relaxed">
+                            <li class="flex items-start gap-2">
+                                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-slate-400 flex-shrink-0"></span>
+                                <span class="break-keep">아이의 상황이나 질환, 치료방법에 따라 금수, 금식 등 여러가지 사전 고지가 필요할 수 있으므로 내원 전 꼭 확인전화를 하고 방문해주시기 바랍니다.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-slate-400 flex-shrink-0"></span>
+                                <span class="break-keep">특히, 처음 진료를 보러오시는 보호자분은 대기시간이 길어지거나 치료가 바로 진행되기 어려운 경우가 발생될 수 있으니 꼭 확인전화 부탁드립니다.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Preparation Note -->
+                    <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200">
+                        <div class="flex items-center gap-3 mb-4">
+                            <i data-lucide="file-text" class="w-6 h-6 text-blue-600"></i>
+                            <h3 class="text-xl font-bold text-slate-900">예약시 준비사항</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed break-keep">
+                            처음 진료를 오시는 경우, 의료진과의 진료상담을 위해 타 병원의 검사 기록 등의 자료들을 준비해 오시면 더 좋습니다.
+                        </p>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="bg-slate-900 rounded-3xl p-8 text-white text-center">
+                        <h3 class="text-lg font-bold mb-2">예약 및 진료 문의</h3>
+                        <p class="text-slate-400 text-sm mb-6">편안한 진료를 위해 사전 예약을 권장합니다.</p>
+                        <a href="tel:055-351-3581" class="text-3xl font-bold text-amber-500 hover:text-amber-400 transition-colors flex items-center justify-center gap-2">
+                            <i data-lucide="phone" class="w-6 h-6"></i>
+                            055-351-3581
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div></section>
+    </main>
+    
+    <footer id="contact" class="bg-slate-900 text-slate-300">
+        <div class="w-full h-96 bg-slate-200 relative"><iframe title="참좋은동물병원 위치" src="https://maps.google.com/maps?q=경남%20밀양시%20밀양대로%201896&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" class="w-full h-full transition-all duration-700" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div><h3 class="text-2xl font-serif font-bold text-white mb-6">참좋은동물병원</h3><p class="text-slate-400 text-sm leading-relaxed mb-6">참좋은동물병원은 생명을 존중하는 마음으로 최상의 진료 서비스를 제공합니다.</p></div>
+                <div><h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Contact Us</h4><ul class="space-y-4"><li class="flex items-start gap-3"><i data-lucide="map-pin" class="text-amber-500 mt-1 flex-shrink-0 w-4 h-4"></i><span class="text-sm">경남 밀양시 밀양대로 1896 1층<br/>참좋은동물병원</span></li><li class="flex items-center gap-3"><i data-lucide="phone" class="text-amber-500 flex-shrink-0 w-4 h-4"></i><span class="text-sm">055-351-3581</span></li></ul></div>
+                <div><h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Hours</h4><ul class="space-y-4"><li class="flex items-start gap-3"><i data-lucide="clock" class="text-amber-500 mt-1 flex-shrink-0 w-4 h-4"></i><div class="text-sm"><strong class="text-amber-500 block mb-1">일요일, 공휴일 휴무</strong><span class="block mb-2"></span><strong class="text-white block mb-1">진료시간</strong><span class="block">월 ~ 금 : 오전 10:00 - 오후 06:00</span><span class="block">토요일 : 오전 10:00 - 오후 03:00</span></div></li></ul></div>
+                <div><h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Quick Menu</h4><ul class="space-y-2 text-sm"><li><a href="index.html#greetings" class="hover:text-amber-400 transition-colors">인사말</a></li><li><a href="pricing.html" class="hover:text-amber-400 transition-colors">진료비안내</a></li><li><a href="index.html#neutering" class="hover:text-amber-400 transition-colors">중성화수술</a></li><li><a href="notice.html" class="hover:text-amber-400 transition-colors">커뮤니티</a></li></ul></div>
+            </div>
+            <div class="border-t border-slate-800 mt-16 pt-8 text-center text-xs text-slate-500"><p>© 2026 Chamzeon Spay & Neuter Clinic. All rights reserved.</p><p class="mt-2">사업자등록번호: 615-16-96288 | 대표: 문현철</p></div>
+        </div>
+    </footer>
+    <script>
+      lucide.createIcons();
+      const header = document.getElementById('main-header');
+      const logoCircle = document.getElementById('logo-circle');
+      const logoText = document.getElementById('logo-text');
+      const logoSub = document.getElementById('logo-sub');
+      const navItems = document.querySelectorAll('.nav-link');
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+
+      window.addEventListener('scroll', () => {
+        const isScrolled = window.scrollY > 50;
+        if (isScrolled) {
+            header.classList.remove('bg-transparent', 'py-6');
+            header.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-md', 'py-3');
+            logoCircle.classList.remove('border-white', 'text-white'); logoCircle.classList.add('border-slate-900', 'text-slate-900');
+            logoText.classList.remove('text-white'); logoText.classList.add('text-slate-900');
+            logoSub.classList.remove('text-slate-200'); logoSub.classList.add('text-slate-600');
+            mobileMenuBtn.classList.remove('text-white'); mobileMenuBtn.classList.add('text-slate-900');
+            navItems.forEach(item => {
+                item.classList.remove('text-white/90'); item.classList.add('text-slate-800');
+            });
+        } else {
+            header.classList.add('bg-transparent', 'py-6'); header.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-md', 'py-3');
+            logoCircle.classList.add('border-white', 'text-white'); logoCircle.classList.remove('border-slate-900', 'text-slate-900');
+            logoText.classList.add('text-white'); logoText.classList.remove('text-slate-900');
+            logoSub.classList.add('text-slate-200'); logoSub.classList.remove('text-slate-600');
+            mobileMenuBtn.classList.add('text-white'); mobileMenuBtn.classList.remove('text-slate-900');
+            navItems.forEach(item => {
+                item.classList.add('text-white/90'); item.classList.remove('text-slate-800');
+            });
+        }
+      });
+      const mobileMenu = document.getElementById('mobile-menu');
+      let isMobileMenuOpen = false;
+      mobileMenuBtn.addEventListener('click', () => { isMobileMenuOpen = !isMobileMenuOpen; if (isMobileMenuOpen) { mobileMenu.classList.remove('hidden'); } else { mobileMenu.classList.add('hidden'); } });
+      const setupSubmenu = (btnId, menuId, iconId) => { const btn = document.getElementById(btnId); const menu = document.getElementById(menuId); const icon = document.getElementById(iconId); if(btn) { btn.addEventListener('click', () => { menu.classList.toggle('hidden'); icon.classList.toggle('rotate-180'); }); } };
+      setupSubmenu('mobile-about-btn', 'mobile-about-menu', 'mobile-about-icon'); setupSubmenu('mobile-neutering-btn', 'mobile-neutering-menu', 'mobile-neutering-icon'); setupSubmenu('mobile-community-btn', 'mobile-community-menu', 'mobile-community-icon');
+    </script>
+</body>
+</html>
