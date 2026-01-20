@@ -45,7 +45,7 @@
           <div class="flex items-center">
             <a href="index.html" class="flex items-center gap-2 group">
                <div id="logo-circle" class="w-10 h-10 rounded-full flex items-center justify-center border-2 transition-colors border-white text-white"><span class="font-serif font-bold text-xl">C</span></div>
-               <div class="flex flex-col"><span id="logo-text" class="text-xl font-bold tracking-tight transition-colors text-white">참좋은</span><span id="logo-sub" class="text-xs tracking-widest transition-colors text-slate-200">SPAY AND NEUTER CLINIC</span></div>
+               <div class="flex flex-col"><span id="logo-text" class="text-xl font-bold tracking-tight transition-colors text-white">참좋은</span><span id="logo-sub" class="text-xs tracking-widest transition-colors text-slate-200">SPAY & NEUTER CLINIC</span></div>
             </a>
           </div>
           <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
@@ -88,7 +88,7 @@
             <div class="absolute inset-0 z-0"><video autoplay loop muted playsinline class="w-full h-full object-cover object-center"><source src="bground.mp4" type="video/mp4"></video><div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-transparent"></div></div>
             <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20">
                 <div class="max-w-2xl text-white">
-                    <div class="flex items-center gap-2 mb-6 animate-fade-in-up"><span class="h-px w-12 bg-amber-500 inline-block"></span><span class="text-amber-500 font-bold uppercase tracking-widest text-sm">SPAY AND NEUTER CLINIC</span></div>
+                    <div class="flex items-center gap-2 mb-6 animate-fade-in-up"><span class="h-px w-12 bg-amber-500 inline-block"></span><span class="text-amber-500 font-bold uppercase tracking-widest text-sm">SPAY & NEUTER CLINIC</span></div>
                     <h1 class="text-5xl md:text-7xl font-serif font-bold leading-tight mb-6 text-shadow-lg animate-fade-in-up" style="animation-delay: 0.1s;">중성화 수술 전문 <br /><span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-amber-500">참좋은동물병원</span></h1>
                     <p class="text-lg md:text-xl text-slate-300 mb-10 leading-relaxed max-w-lg animate-fade-in-up" style="animation-delay: 0.2s;">안전한 마취 시스템과 수만 건의 수술 노하우로 반려동물의 건강한 내일을 약속합니다.</p>
                     
@@ -251,9 +251,68 @@
       if(scrollTopBtn) { scrollTopBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); }); }
       
       const heroStat = document.getElementById('hero-stat');
-      const animateCounter = (el) => { const target = +el.getAttribute('data-target'); const duration = 2000; const increment = target / (duration / 16); let current = 0; const timer = setInterval(() => { current += increment; if (current >= target) { el.innerText = target.toLocaleString(); clearInterval(timer); } else { el.innerText = Math.ceil(current).toLocaleString(); } }, 16); };
-      const observer = new IntersectionObserver((entries, observer) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.remove('opacity-0', 'translate-y-10'); const counters = entry.target.querySelectorAll('.counter-value'); counters.forEach(counter => animateCounter(counter)); observer.unobserve(entry.target); } }); }, { threshold: 0.2 });
+      
+      // Function to fetch data from Google Sheets (A1 cell)
+      const fetchSurgeryCount = async () => {
+        try {
+            const sheetId = '1sP90y0AqbabxcfEkZh21mYS7xkcIeNpO5Y6Uc8StLUo';
+            // Use Google Visualization API Query to get cell A1 (tq=SELECT A LIMIT 1)
+            const response = await fetch(`https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json&tq=SELECT+A+LIMIT+1`);
+            const text = await response.text();
+            // The response is wrapped in google.visualization.Query.setResponse(...), so we parse it
+            const jsonString = text.match(/(?<=\().+?(?=\);)/s)[0];
+            const json = JSON.parse(jsonString);
+            
+            // Access the value (Row 0, Column 0)
+            if (json.table && json.table.rows && json.table.rows.length > 0) {
+                const val = json.table.rows[0].c[0].v;
+                return parseInt(val, 10);
+            }
+            return 30; // Fallback if structure is unexpected
+        } catch (error) {
+            console.error("Failed to fetch spreadsheet data:", error);
+            return 30; // Fallback default
+        }
+      };
+
+      const animateCounter = (el, target) => { 
+          const duration = 2000; 
+          const increment = target / (duration / 16); 
+          let current = 0; 
+          const timer = setInterval(() => { 
+              current += increment; 
+              if (current >= target) { 
+                  el.innerText = target.toLocaleString(); 
+                  clearInterval(timer); 
+              } else { 
+                  el.innerText = Math.ceil(current).toLocaleString(); 
+              } 
+          }, 16); 
+      };
+
+      const observer = new IntersectionObserver(async (entries, observer) => { 
+          for (const entry of entries) {
+              if (entry.isIntersecting) { 
+                  entry.target.classList.remove('opacity-0', 'translate-y-10'); 
+                  
+                  const counters = entry.target.querySelectorAll('.counter-value');
+                  
+                  // Fetch the latest count from Google Sheets
+                  const fetchedCount = await fetchSurgeryCount();
+                  
+                  counters.forEach(counter => {
+                      // Update the data-target attribute (optional, for reference) and animate
+                      counter.setAttribute('data-target', fetchedCount);
+                      animateCounter(counter, fetchedCount);
+                  });
+                  
+                  observer.unobserve(entry.target); 
+              } 
+          }
+      }, { threshold: 0.2 });
+      
       if (heroStat) observer.observe(heroStat);
+      
       const dateElement = document.getElementById('current-date');
       if (dateElement) { const today = new Date(); dateElement.innerText = `2026년 1월 1일 ~ ${today.getFullYear()}년 ${today.getMonth() + 1}월 ${today.getDate()}일 기준`; }
 
