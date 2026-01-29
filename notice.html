@@ -49,7 +49,7 @@
             <a href="pricing.html" class="mobile-link px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">진료비안내</a>
             <div><button id="mobile-neutering-btn" class="w-full flex justify-between items-center px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">중성화수술<i data-lucide="chevron-down" class="w-4 h-4 transition-transform" id="mobile-neutering-icon"></i></button><div id="mobile-neutering-menu" class="hidden bg-slate-50 border-y border-slate-100"><a href="neutering-process.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">중성화 수술 과정</a><a href="neutering-micro-incision.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">초미세 절개 중성화 수술</a><a href="neutering-cost.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">합리적인 수술 비용</a><a href="neutering-care.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">수술 후 회복 관리</a><a href="neutering-photos.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">중성화 수술 후 사진</a></div></div>
             <a href="stemcell.html" class="mobile-link px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">줄기세포/엑소좀 치료(준비중)</a>
-            <div><button id="mobile-community-btn" class="w-full flex justify-between items-center px-6 py-3 text-slate-800 hover:bg-slate-50 font-medium">커뮤니티<i data-lucide="chevron-down" class="w-4 h-4 transition-transform" id="mobile-community-icon"></i></button><div id="mobile-community-menu" class="hidden bg-slate-50 border-y border-slate-100"><a href="notice.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">공지사항</a><a href="tv-appearance.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">방송출연</a></div></div>
+            <div><button id="mobile-community-btn" class="w-full flex justify-between items-center px-6 py-3 text-amber-600 font-bold hover:bg-slate-50">커뮤니티<i data-lucide="chevron-down" class="w-4 h-4 transition-transform rotate-180" id="mobile-community-icon"></i></button><div id="mobile-community-menu" class="block bg-slate-50 border-y border-slate-100"><a href="notice.html" class="block px-10 py-3 text-sm text-amber-600 bg-amber-50 border-l-4 border-amber-600 font-bold">공지사항</a><a href="tv-appearance.html" class="block px-10 py-3 text-sm text-slate-600 hover:text-amber-600">방송출연</a></div></div>
           </div>
         </div>
     </header>
@@ -66,19 +66,14 @@
                 </div>
 
                 <div class="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden">
-                    <!-- Desktop Header -->
                     <div class="hidden md:grid grid-cols-[80px_1fr_120px_120px] bg-slate-50 border-b border-slate-200 font-bold text-slate-900 text-center">
                         <div class="p-6">번호</div>
                         <div class="p-6 text-left">제목</div>
                         <div class="p-6">작성자</div>
                         <div class="p-6">작성일</div>
                     </div>
-
-                    <!-- List Items -->
                     <div class="divide-y divide-slate-100">
-                        <!-- Notice Item 1 -->
                         <div id="notice-row-1" class="group hover:bg-slate-50 transition-colors cursor-pointer">
-                            <!-- Desktop View -->
                             <div class="hidden md:grid grid-cols-[80px_1fr_120px_120px] items-center">
                                 <div class="p-6 text-center text-amber-600 font-bold">1</div>
                                 <div class="p-6 text-left text-slate-900 group-hover:text-amber-700 transition-colors font-bold truncate">
@@ -88,8 +83,6 @@
                                 <div class="p-6 text-center text-slate-500 text-sm">관리자</div>
                                 <div class="p-6 text-center text-slate-500 text-sm">2026.01.01</div>
                             </div>
-
-                            <!-- Mobile View -->
                             <div class="md:hidden p-6 flex flex-col gap-2">
                                 <div class="flex items-center justify-between mb-1">
                                     <span class="bg-amber-100 text-amber-800 text-[10px] px-2 py-0.5 rounded font-bold">공지</span>
@@ -106,8 +99,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Pagination -->
                 <div class="flex justify-center mt-12 gap-2">
                     <button class="w-10 h-10 rounded-lg border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-slate-50 hover:text-slate-600 disabled:opacity-50"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
                     <button class="w-10 h-10 rounded-lg bg-amber-600 text-white flex items-center justify-center font-bold">1</button>
@@ -117,14 +108,10 @@
         </section>
     </main>
 
-    <!-- Modal -->
     <div id="notice-modal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-        <!-- Backdrop -->
         <div class="fixed inset-0 bg-slate-900/75 transition-opacity backdrop-blur-sm" id="modal-backdrop"></div>
-
         <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
             <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
-                <!-- Modal Panel -->
                 <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-lg border border-slate-100">
                     <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                         <div class="sm:flex sm:items-start">
@@ -182,21 +169,21 @@
             logoCircle.classList.remove('border-white', 'text-white'); logoCircle.classList.add('border-slate-900', 'text-slate-900');
             logoText.classList.remove('text-white'); logoText.classList.add('text-slate-900');
             logoSub.classList.remove('text-slate-200'); logoSub.classList.add('text-slate-600');
+            mobileMenuBtn.classList.remove('text-white'); mobileMenuBtn.classList.add('text-slate-900');
             navItems.forEach(item => {
                 if (item.classList.contains('text-amber-500')) { item.classList.remove('text-amber-500'); item.classList.add('text-amber-600'); }
                 else { item.classList.remove('text-white'); item.classList.add('text-slate-800'); }
             });
-            mobileMenuBtn.classList.remove('text-white'); mobileMenuBtn.classList.add('text-slate-900');
         } else {
             header.classList.add('bg-transparent', 'py-6'); header.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-md', 'py-3');
             logoCircle.classList.add('border-white', 'text-white'); logoCircle.classList.remove('border-slate-900', 'text-slate-900');
             logoText.classList.add('text-white'); logoText.classList.remove('text-slate-900');
             logoSub.classList.add('text-slate-200'); logoSub.classList.remove('text-slate-600');
+            mobileMenuBtn.classList.add('text-white'); mobileMenuBtn.classList.remove('text-slate-900');
             navItems.forEach(item => {
                 if (item.classList.contains('text-amber-600')) { item.classList.remove('text-amber-600'); item.classList.add('text-amber-500'); }
                 else { item.classList.add('text-white'); item.classList.remove('text-slate-800'); }
             });
-            mobileMenuBtn.classList.add('text-white'); mobileMenuBtn.classList.remove('text-slate-900');
         }
       });
       const mobileMenu = document.getElementById('mobile-menu');
@@ -205,35 +192,15 @@
       const setupSubmenu = (btnId, menuId, iconId) => { const btn = document.getElementById(btnId); const menu = document.getElementById(menuId); const icon = document.getElementById(iconId); if(btn) { btn.addEventListener('click', () => { menu.classList.toggle('hidden'); icon.classList.toggle('rotate-180'); }); } };
       setupSubmenu('mobile-about-btn', 'mobile-about-menu', 'mobile-about-icon'); setupSubmenu('mobile-neutering-btn', 'mobile-neutering-menu', 'mobile-neutering-icon'); setupSubmenu('mobile-community-btn', 'mobile-community-menu', 'mobile-community-icon');
 
-      // Modal Logic
       const noticeRow = document.getElementById('notice-row-1');
       const modal = document.getElementById('notice-modal');
       const modalBackdrop = document.getElementById('modal-backdrop');
       const closeModalBtns = document.querySelectorAll('.close-modal');
-
-      function openModal() {
-          modal.classList.remove('hidden');
-          // Prevent background scrolling
-          document.body.style.overflow = 'hidden';
-      }
-
-      function closeModal() {
-          modal.classList.add('hidden');
-          // Enable background scrolling
-          document.body.style.overflow = 'auto';
-      }
-
-      if(noticeRow) {
-          noticeRow.addEventListener('click', openModal);
-      }
-
-      if(modalBackdrop) {
-          modalBackdrop.addEventListener('click', closeModal);
-      }
-
-      closeModalBtns.forEach(btn => {
-          btn.addEventListener('click', closeModal);
-      });
+      function openModal() { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
+      function closeModal() { modal.classList.add('hidden'); document.body.style.overflow = 'auto'; }
+      if(noticeRow) noticeRow.addEventListener('click', openModal);
+      if(modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
+      closeModalBtns.forEach(btn => btn.addEventListener('click', closeModal));
     </script>
 </body>
 </html>
