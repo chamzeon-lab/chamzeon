@@ -36,7 +36,6 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans selection:bg-amber-100 selection:text-amber-900 relative">
     <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent py-6">
@@ -208,22 +207,6 @@
             <div class="border-t border-slate-800 mt-16 pt-8 text-center text-xs text-slate-500"><p>© 2026 Chamzeon Spay & Neuter Clinic. All rights reserved.</p><p class="mt-2">사업자등록번호: 615-16-96288 | 대표: 문현철</p></div>
         </div>
     </footer>
-
-    <!-- Announcement Popup Modal -->
-    <div id="announcement-popup" class="fixed inset-0 z-[150] hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity duration-300 opacity-0">
-        <div class="relative bg-white rounded-2xl overflow-hidden shadow-2xl max-w-[400px] w-full transform scale-95 transition-transform duration-300" id="popup-container">
-            <div class="relative w-full aspect-[3/4] bg-slate-100">
-                 <img src="pop1.jpg" alt="공지사항" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-slate-400 flex-col gap-2\'><i data-lucide=\'image-off\' class=\'w-8 h-8\'></i><span class=\'text-xs\'>이미지를 불러올 수 없습니다</span></div>'; if(typeof lucide !== 'undefined') lucide.createIcons();">
-            </div>
-            <div class="p-4 bg-white flex justify-between items-center border-t border-slate-100">
-                <label class="flex items-center gap-2 cursor-pointer group select-none">
-                    <input type="checkbox" id="popup-dont-show" class="w-4 h-4 rounded border-slate-300 text-amber-600 focus:ring-amber-500">
-                    <span class="text-sm text-slate-500 group-hover:text-slate-700 transition-colors">오늘 하루 보지 않기</span>
-                </label>
-                <button id="close-popup-btn" class="text-slate-900 px-4 py-2 rounded-lg text-sm font-bold hover:bg-slate-100 transition-colors">닫기</button>
-            </div>
-        </div>
-    </div>
 
     <!-- Image Modal -->
     <div id="image-modal" class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 md:p-8 opacity-0 transition-opacity duration-300">
@@ -477,61 +460,6 @@
               closeModal();
           }
       });
-
-      // Announcement Popup Logic
-      const popupModal = document.getElementById('announcement-popup');
-      const popupContainer = document.getElementById('popup-container');
-      const closePopupBtn = document.getElementById('close-popup-btn');
-      const dontShowCheckbox = document.getElementById('popup-dont-show');
-      const POPUP_KEY = 'hide_announcement_popup_v1';
-
-      function showPopup() {
-          if (!popupModal) return;
-          const hidePopup = localStorage.getItem(POPUP_KEY);
-          if (hidePopup) {
-              const expireDate = new Date(parseInt(hidePopup));
-              if (new Date() < expireDate) return;
-          }
-
-          popupModal.classList.remove('hidden');
-          // Force reflow
-          void popupModal.offsetWidth;
-          
-          setTimeout(() => {
-              popupModal.classList.add('opacity-100');
-              popupContainer.classList.remove('scale-95');
-              popupContainer.classList.add('scale-100');
-          }, 50);
-      }
-
-      function closeAnnouncementPopup() {
-          if (!popupModal) return;
-          if (dontShowCheckbox.checked) {
-              const expire = new Date();
-              expire.setDate(expire.getDate() + 1); // 24 hours
-              localStorage.setItem(POPUP_KEY, expire.getTime().toString());
-          }
-
-          popupModal.classList.remove('opacity-100');
-          popupContainer.classList.remove('scale-100');
-          popupContainer.classList.add('scale-95');
-          setTimeout(() => {
-              popupModal.classList.add('hidden');
-          }, 300);
-      }
-
-      if (closePopupBtn) closePopupBtn.addEventListener('click', closeAnnouncementPopup);
-      if (popupModal) {
-          popupModal.addEventListener('click', (e) => {
-              if (e.target === popupModal) closeAnnouncementPopup();
-          });
-      }
-
-      // Initialize Popup
-      window.addEventListener('load', () => {
-          setTimeout(showPopup, 500);
-      });
     </script>
-<script type="module" src="/index.tsx"></script>
 </body>
 </html>
