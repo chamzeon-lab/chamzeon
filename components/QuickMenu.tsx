@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { MessageCircle, Phone, MapPin, ArrowUp, MonitorPlay } from 'lucide-react';
+import { MessageCircle, Phone, MapPin, ArrowUp, MonitorPlay, Download } from 'lucide-react';
 
 const QuickMenu: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
+
+  const downloadProject = () => {
+    window.location.href = '/api/download-project';
+  };
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -27,6 +31,20 @@ const QuickMenu: React.FC = () => {
   return (
     <div className={`fixed right-4 md:right-8 bottom-8 md:bottom-auto md:top-1/2 md:-translate-y-1/2 z-50 flex flex-col gap-2 transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
       
+      {/* Project Download Button */}
+      <button 
+        onClick={downloadProject}
+        className="flex flex-col items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-blue-600 hover:bg-blue-700 text-white rounded-full md:rounded-xl shadow-lg transition-transform hover:scale-110 group relative"
+        aria-label="프로젝트 다운로드"
+      >
+        <Download size={24} className="mb-0.5" />
+        <span className="text-[10px] font-bold hidden md:block">SAVE</span>
+        
+        <span className="absolute right-full mr-3 bg-blue-800 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap hidden md:block">
+          전체 파일 다운로드 (.zip)
+        </span>
+      </button>
+
       {/* Kakao Consult */}
       <a 
         href="#" 
