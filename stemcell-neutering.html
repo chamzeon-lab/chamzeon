@@ -104,7 +104,8 @@
             logoSub.classList.remove('text-slate-200'); logoSub.classList.add('text-slate-600');
             mobileMenuBtn.classList.remove('text-white'); mobileMenuBtn.classList.add('text-slate-900');
             navItems.forEach(item => {
-                item.classList.remove('text-white/90'); item.classList.add('text-slate-800');
+                if (item.classList.contains('text-amber-500')) { item.classList.remove('text-amber-500'); item.classList.add('text-amber-600'); }
+                else { item.classList.remove('text-white', 'text-white/90'); item.classList.add('text-slate-900'); }
             });
         } else {
             header.classList.add('bg-transparent', 'py-6'); header.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-md', 'py-3');
@@ -113,7 +114,8 @@
             logoSub.classList.add('text-slate-200'); logoSub.classList.remove('text-slate-600');
             mobileMenuBtn.classList.add('text-white'); mobileMenuBtn.classList.remove('text-slate-900');
             navItems.forEach(item => {
-                item.classList.add('text-white/90'); item.classList.remove('text-slate-800');
+                if (item.classList.contains('text-amber-600')) { item.classList.remove('text-amber-600'); item.classList.add('text-amber-500'); }
+                else { item.classList.add('text-white'); item.classList.remove('text-slate-900', 'text-slate-800'); }
             });
         }
       });

@@ -245,7 +245,7 @@
             mobileMenuBtn.classList.remove('text-white'); mobileMenuBtn.classList.add('text-slate-900');
             navItems.forEach(item => {
                 if (item.classList.contains('text-amber-500')) { item.classList.remove('text-amber-500'); item.classList.add('text-amber-600'); }
-                else { item.classList.remove('text-white'); item.classList.add('text-slate-800'); }
+                else { item.classList.remove('text-white', 'text-white/90'); item.classList.add('text-slate-900'); }
             });
             mobileMenuBtn.classList.remove('text-white'); mobileMenuBtn.classList.add('text-slate-900');
         } else {
@@ -256,7 +256,7 @@
             mobileMenuBtn.classList.add('text-white'); mobileMenuBtn.classList.remove('text-slate-900');
             navItems.forEach(item => {
                 if (item.classList.contains('text-amber-600')) { item.classList.remove('text-amber-600'); item.classList.add('text-amber-500'); }
-                else { item.classList.add('text-white'); item.classList.remove('text-slate-800'); }
+                else { item.classList.add('text-white'); item.classList.remove('text-slate-900', 'text-slate-800'); }
             });
             mobileMenuBtn.classList.add('text-white'); mobileMenuBtn.classList.remove('text-slate-900');
         }
