@@ -251,6 +251,29 @@
         </div>
     </footer>
 
+    <!-- Main Popup -->
+    <div id="main-popup" class="fixed top-24 right-4 md:right-8 lg:right-16 xl:right-24 z-[110] p-4 pointer-events-none transition-opacity duration-300 hidden opacity-0 flex items-start">
+        <div class="relative bg-white rounded-2xl shadow-[0_0_40px_rgba(0,0,0,0.15)] border border-slate-200 overflow-hidden max-w-sm w-full transform transition-transform duration-300 scale-95 pointer-events-auto" id="popup-content">
+            <button id="close-popup-btn" class="absolute top-3 right-3 text-white bg-black/40 hover:bg-black/60 rounded-full p-1.5 transition-colors z-10 backdrop-blur-sm">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            
+            <a href="pricing.html" class="block w-full cursor-pointer group">
+                <div class="overflow-hidden">
+                    <img src="pop1.jpg" alt="중성화수술 가격표 안내" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://picsum.photos/seed/pop1/400/500';"/>
+                </div>
+            </a>
+            
+            <div class="bg-white p-3.5 flex justify-between items-center border-t border-slate-100">
+                <label class="flex items-center gap-2 cursor-pointer text-sm text-slate-600 hover:text-slate-900 transition-colors">
+                    <input type="checkbox" id="hide-today-checkbox" class="rounded text-amber-600 focus:ring-amber-500 w-4 h-4 cursor-pointer">
+                    오늘 하루 보지 않기
+                </label>
+                <button id="close-popup-text" class="text-sm font-bold text-slate-900 hover:text-amber-600 transition-colors px-2 py-1">닫기</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Image Modal -->
     <div id="image-modal" class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 md:p-8 opacity-0 transition-opacity duration-300">
         <button id="close-modal" class="absolute top-4 right-4 text-white/70 hover:text-white transition-colors p-2 z-50">
@@ -509,6 +532,50 @@
               closeModal();
           }
       });
+
+      // Main Popup Logic
+      const mainPopup = document.getElementById('main-popup');
+      const mainPopupContent = document.getElementById('popup-content');
+      const closePopupBtn = document.getElementById('close-popup-btn');
+      const closePopupText = document.getElementById('close-popup-text');
+      const hideTodayCheckbox = document.getElementById('hide-today-checkbox');
+
+      const hidePopupUntil = localStorage.getItem('hidePopupUntil');
+      const now = new Date().getTime();
+
+      if (mainPopup && (!hidePopupUntil || now > parseInt(hidePopupUntil, 10))) {
+          setTimeout(() => {
+              mainPopup.classList.remove('hidden');
+              setTimeout(() => {
+                  mainPopup.classList.remove('opacity-0');
+                  mainPopupContent.classList.remove('scale-95');
+                  mainPopupContent.classList.add('scale-100');
+              }, 10);
+          }, 500);
+      }
+
+      const closeMainPopup = () => {
+          if (hideTodayCheckbox && hideTodayCheckbox.checked) {
+              const expireTime = new Date().getTime() + (24 * 60 * 60 * 1000);
+              localStorage.setItem('hidePopupUntil', expireTime);
+          }
+          
+          mainPopup.classList.add('opacity-0');
+          mainPopupContent.classList.remove('scale-100');
+          mainPopupContent.classList.add('scale-95');
+          
+          setTimeout(() => {
+              mainPopup.classList.add('hidden');
+          }, 300);
+      };
+
+      if (closePopupBtn) closePopupBtn.addEventListener('click', closeMainPopup);
+      if (closePopupText) closePopupText.addEventListener('click', closeMainPopup);
+      if (mainPopup) {
+          mainPopup.addEventListener('click', (e) => {
+              if (e.target === mainPopup) closeMainPopup();
+          });
+      }
     </script>
 </body>
 </html>
