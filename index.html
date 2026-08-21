@@ -251,7 +251,7 @@
         </div>
     </footer>
 
-    <!-- Main Popup (pop1.jpg) -->
+    <!-- Main Popup -->
     <div id="main-popup" class="fixed top-24 right-4 md:right-8 lg:right-16 xl:right-24 z-[110] p-4 pointer-events-none transition-opacity duration-300 hidden opacity-0 flex items-start">
         <div class="relative bg-white rounded-2xl shadow-[0_0_40px_rgba(0,0,0,0.15)] border border-slate-200 overflow-hidden max-w-sm w-full transform transition-transform duration-300 scale-95 pointer-events-auto" id="popup-content">
             <button id="close-popup-btn" class="absolute top-3 right-3 text-white bg-black/40 hover:bg-black/60 rounded-full p-1.5 transition-colors z-10 backdrop-blur-sm">
@@ -270,29 +270,6 @@
                     오늘 하루 보지 않기
                 </label>
                 <button id="close-popup-text" class="text-xs font-bold text-slate-900 hover:text-amber-600 transition-colors px-2 py-1">닫기</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Notice Popup (pop2.jpg - 병원 휴무 안내) -->
-    <div id="notice-popup" class="fixed top-24 right-4 md:right-8 lg:right-16 xl:right-24 z-[120] p-4 pointer-events-none transition-opacity duration-300 hidden opacity-0 flex items-start">
-        <div class="relative bg-white rounded-2xl shadow-[0_0_40px_rgba(0,0,0,0.15)] border border-slate-200 overflow-hidden max-w-sm w-full transform transition-transform duration-300 scale-95 pointer-events-auto" id="notice-popup-content">
-            <button id="close-notice-popup-btn" class="absolute top-3 right-3 text-white bg-black/40 hover:bg-black/60 rounded-full p-1.5 transition-colors z-10 backdrop-blur-sm">
-                <i data-lucide="x" class="w-5 h-5"></i>
-            </button>
-            
-            <a href="clinic-hours.html" class="block w-full cursor-pointer group">
-                <div class="overflow-hidden">
-                    <img src="pop2.jpg" alt="병원 휴무 안내" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://picsum.photos/seed/pop2/400/500';"/>
-                </div>
-            </a>
-            
-            <div class="bg-white px-3 py-2 flex justify-between items-center border-t border-slate-100">
-                <label class="flex items-center gap-1.5 cursor-pointer text-xs text-slate-600 hover:text-slate-900 transition-colors">
-                    <input type="checkbox" id="hide-notice-today-checkbox" class="rounded text-amber-600 focus:ring-amber-500 w-3.5 h-3.5 cursor-pointer">
-                    오늘 하루 보지 않기
-                </label>
-                <button id="close-notice-popup-text" class="text-xs font-bold text-slate-900 hover:text-amber-600 transition-colors px-2 py-1">닫기</button>
             </div>
         </div>
     </div>
@@ -556,7 +533,7 @@
           }
       });
 
-      // Main Popup 1 Logic (pop1.jpg)
+      // Main Popup Logic
       const mainPopup = document.getElementById('main-popup');
       const mainPopupContent = document.getElementById('popup-content');
       const closePopupBtn = document.getElementById('close-popup-btn');
@@ -597,49 +574,6 @@
       if (mainPopup) {
           mainPopup.addEventListener('click', (e) => {
               if (e.target === mainPopup) closeMainPopup();
-          });
-      }
-
-      // Notice Popup 2 Logic (pop2.jpg - 병원 휴무 안내)
-      const noticePopup = document.getElementById('notice-popup');
-      const noticePopupContent = document.getElementById('notice-popup-content');
-      const closeNoticePopupBtn = document.getElementById('close-notice-popup-btn');
-      const closeNoticePopupText = document.getElementById('close-notice-popup-text');
-      const hideNoticeTodayCheckbox = document.getElementById('hide-notice-today-checkbox');
-
-      const hideNoticePopupUntil = localStorage.getItem('hideNoticePopupUntil');
-
-      if (noticePopup && (!hideNoticePopupUntil || now > parseInt(hideNoticePopupUntil, 10))) {
-          setTimeout(() => {
-              noticePopup.classList.remove('hidden');
-              setTimeout(() => {
-                  noticePopup.classList.remove('opacity-0');
-                  noticePopupContent.classList.remove('scale-95');
-                  noticePopupContent.classList.add('scale-100');
-              }, 10);
-          }, 600);
-      }
-
-      const closeNoticePopup = () => {
-          if (hideNoticeTodayCheckbox && hideNoticeTodayCheckbox.checked) {
-              const expireTime = new Date().getTime() + (24 * 60 * 60 * 1000);
-              localStorage.setItem('hideNoticePopupUntil', expireTime);
-          }
-          
-          noticePopup.classList.add('opacity-0');
-          noticePopupContent.classList.remove('scale-100');
-          noticePopupContent.classList.add('scale-95');
-          
-          setTimeout(() => {
-              noticePopup.classList.add('hidden');
-          }, 300);
-      };
-
-      if (closeNoticePopupBtn) closeNoticePopupBtn.addEventListener('click', closeNoticePopup);
-      if (closeNoticePopupText) closeNoticePopupText.addEventListener('click', closeNoticePopup);
-      if (noticePopup) {
-          noticePopup.addEventListener('click', (e) => {
-              if (e.target === noticePopup) closeNoticePopup();
           });
       }
     </script>
